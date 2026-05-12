@@ -1,18 +1,18 @@
 {% assign block_settings = block.settings %}
 <div
-  class="flex max-sm:flex-col sm:items-center sm:justify-between gap-sm sm:gap-xl w-full"
+  class="copyright flex gap-x-0! max-sm:flex-col sm:items-center w-full"
   {{ block.shopify_attributes }}
 >
-  <span class="text-sm">
+  <span class="text-sm copyright__item">
     <span>
-      {{ shop.name | link_to: routes.root_url | append: " - " -}}
       &copy; {{ 'now' | date: '%Y' }}
+      {{ "by " | append: shop.name -}}
     </span>
   </span>
   {%- if block_settings.show_website_by -%}
-    <span class="text-sm">
+    <span class="text-sm copyright__item">
       website by
-      <a class="underline underline-offset-2 hover:text-primary focus:text-primary" target="_blank" rel="noopener noreferrer"
+      <a class="underline! underline-offset-2! hover:text-primary focus:text-primary" target="_blank" rel="noopener noreferrer"
         aria-label="Webwide - {{ 'accessibility.open_new_tab' | t }}" href="https://www.web-wide.be" title="Webwide"
       >
         webwide

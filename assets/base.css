@@ -385,7 +385,7 @@ p:empty {
   .page-width-normal,
   .page-width-narrow,
   .page-width-content {
-    --page-margin: 40px;
+    --page-margin: 60px;
   }
 }
 
@@ -444,6 +444,10 @@ p:empty {
   display: grid;
   grid-template-columns: var(--full-page-grid-with-margins);
   min-height: var(--section-min-height, 'auto');
+}
+
+.section.hero__container {
+  max-height: 1192px;
 }
 
 /* Place all direct children in the center column by default */
