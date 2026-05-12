@@ -1,5 +1,9 @@
 /* Footer styles */
 @layer components {
+    footer .section-background {
+        @apply bg-secondary-light!;
+    }
+
     .copyright,
     .footer-content .details-content ul {
         @apply flex flex-wrap items-center justify-center;  

@@ -148,6 +148,7 @@
     /* colors */
     --color-primary: rgb(var(--color-primary-rgb) / 1);
     --color-secondary: rgb(var(--color-secondary-rgb) / 1);
+    --color-secondary-light: rgb(var(--color-secondary-rgb) / 0.25);
     /* --color-tertiary: rgb(var(--color-tertiary-rgb) / 1); */
     --color-light: rgb(var(--color-light-rgb) / 1);
     --color-title: rgb(var(--color-title-rgb) / 1);
