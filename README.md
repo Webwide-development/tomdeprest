@@ -1,6 +1,6 @@
-# Master
+# Tom De Prest
 
-## Starter template voor alle Webwide projecten
+## Nieuwe webshop voor de verkoop van meditaties en cursussen.
 
 ### Terminal
 
@@ -16,7 +16,7 @@ code .
 git clone https://github.com/Webwide-development/master.git .
 git remote -v
 git remote remove origin
-git remote add origin https://github.com/Webwide-development/`[nieuwe naam`].git
+git remote add origin https://github.com/Webwide-development/tomdeprest.git
 git branch
 
 rm -rf .git
@@ -24,7 +24,7 @@ git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/jouw-gebruiker/nieuwe-shopify-theme.git
+git remote add origin https://github.com/Webwide-development/tomdeprest.git
 git push -u origin main
 ```
 
