@@ -1,6 +1,7 @@
 /* Footer styles */
 @layer components {
-    footer .section-background {
+    footer .section-background,
+    footer + div .section-background {
         @apply bg-secondary-light!;
     }
 
