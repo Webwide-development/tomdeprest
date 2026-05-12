@@ -495,7 +495,7 @@
 
   <div
     class="hero__container spacing-style section section--full-width"
-    style="{% render 'spacing-style', settings: section.settings %}"
+    style="{% render 'spacing-style', settings: section.settings %} padding-inline: var(--page-margin); margin-bottom: var(--page-margin);"
   >
     {%- if section.settings.link != blank -%}
       <a
@@ -743,7 +743,7 @@
       "label": "t:settings.direction",
       "options": [
         {
-          "value": "col",
+          "value": "column",
           "label": "t:options.vertical"
         },
         {
@@ -751,7 +751,7 @@
           "label": "t:options.horizontal"
         }
       ],
-      "default": "col"
+      "default": "column"
     },
     {
       "type": "checkbox",
