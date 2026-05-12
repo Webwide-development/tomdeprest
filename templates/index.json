@@ -16,7 +16,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>Browse our latest products</p>",
+            "text": "<p>Herontdek je innerlijke rust</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -38,11 +38,37 @@
           },
           "blocks": {}
         },
+        "text_Va9EeM": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>BodyMind Connectie helpt je opnieuw verbinding maken met jezelf</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "button_H9gpTf": {
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "Shop all",
+            "label": "Start je moment van rust",
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
             "style_class": "button-secondary",
@@ -56,6 +82,7 @@
       },
       "block_order": [
         "text_YLPk4p",
+        "text_Va9EeM",
         "button_H9gpTf"
       ],
       "name": "t:names.hero",
@@ -135,7 +162,7 @@
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h4",
+                "type_preset": "h2",
                 "font": "var(--font-body--family)",
                 "font_size": "",
                 "line_height": "normal",
@@ -265,7 +292,7 @@
       },
       "name": "Featured collection",
       "settings": {
-        "collection": "all",
+        "collection": "meditaties",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 8,
