@@ -1,0 +1,186 @@
+/* Variables */
+
+/* -----------------------------------------------------------
+   THEME TOKENS / DESIGN SYSTEM
+   ----------------------------------------------------------- */
+:root {
+    /* Page Layout */
+    --sidebar-width: 25rem;
+    --narrow-content-width: 36rem;
+    --normal-content-width: 42rem;
+    --wide-content-width: 46rem;
+    --narrow-page-width: 90rem;
+    --normal-page-width: 120rem;
+    --wide-page-width: 150rem;
+
+    /* Section Heights */
+    --section-height-small: 15rem;
+    --section-height-medium: 25rem;
+    --section-height-large: 35rem;
+
+    @media screen and (min-width: 40em) {
+        --section-height-small: 40svh;
+        --section-height-medium: 55svh;
+        --section-height-large: 70svh;
+    }
+
+    @media screen and (min-width: 60em) {
+        --section-height-small: 50svh;
+        --section-height-medium: 65svh;
+        --section-height-large: 80svh;
+    }
+
+    /* Margin-block sizes */
+    --font-h1--spacing: 0.25em;
+    --font-h2--spacing: 0.25em;
+    --font-h3--spacing: 0.25em;
+    --font-h4--spacing: 0.25em;
+    --font-h5--spacing: 0.25em;
+    --font-h6--spacing: 0.25em;
+    --font-paragraph--spacing: 0.5em;
+}
+
+
+/* -----------------------------------------------------------
+   THEME VARIABLES
+   ----------------------------------------------------------- */
+@theme {
+    /* Font sizes */
+    --text-sm: 14px;
+    --text-base: 16px;
+    --text-md: 18px;
+    --text-lg: 20px;
+    --text-xl: 24px;
+    --text-2xl: 32px;
+    --text-3xl: 36px;
+    --text-4xl: 40px;
+    --text-5xl: 56px;
+
+    /* line height */
+    --leading-tight: 1;
+    --leading-snug: 1.25;
+    --leading-normal: 1.5;
+    --leading-loose: 1.7;
+
+    /* letter spacing */
+    --tracking-tight: -0.02em;
+    --tracking-base: 0;
+    --tracking-wide: 0.04em;
+
+    /* colors */
+    --color-primary-rgb: 255 90 0; /* #FF5A00 */
+    --color-secondary-rgb: 0 80 130; /* #005082 */
+    --color-tertiary-rgb: 255 231 202; /* #FFE7CA */
+    --color-overlay-rgb: 166 161 236; /* #A6A1EC */
+    --color-light-rgb: 241 242 234; /* #F1F2EA */
+    --color-rating-rgb: 255 200 0; /* #FFC800 */
+
+    --color-white-rgb: 255 255 255; /* #FFFFFF */
+    --color-black-rgb: 0 0 0; /* #000000 */
+    --color-error-rgb: 139 0 0; /* #8B0000 */
+    --color-success-rgb: 0 100 0; /* #006400 */
+
+    /* spacing */
+    --space-3xs: 0.125rem; /* 2px */
+    --space-2xs: 0.25rem; /* 4px */
+    --space-xs: 0.5rem; /* 8px */
+    --space-sm: 0.75rem; /* 12px */
+    --space-base: 1rem; /* 16px */
+    --space-md: 1.125rem; /* 18px */
+    --space-lg: 1.5rem; /* 24px */
+    --space-xl: 1.75rem; /* 28px */
+    --space-2xl: 2rem; /* 32px */
+    --space-3xl: 2.25rem; /* 36px */
+    --space-4xl: 2.5rem; /* 40px */
+    --space-5xl: 3rem; /* 48px */
+    --space-6xl: 3.75rem; /* 60px */
+    --space-7xl: 5rem; /* 80px */
+    --space-8xl: 6.25rem; /* 100px */
+    --space-9xl: 8rem; /* 128px */
+    --space-10xl: 9.75rem; /* 156px */
+    --space-11xl: 12.5rem; /* 200px */
+    --space-12xl: 19.375rem; /* 310 */
+    --space-13xl: 37.5rem; /* 600px */
+
+    /* z-index */
+    --layer-section-background: -2;
+    --layer-lowest: -1;
+    --layer-base: 0;
+    --layer-flat: 1;
+    --layer-raised: 2;
+    --layer-heightened: 4;
+    --layer-sticky: 8;
+    --layer-window-overlay: 10;
+    --layer-header-menu: 12;
+    --layer-overlay: 16;
+    --layer-menu-drawer: 18;
+    --layer-temporary: 20;
+    --layer-sticky: 200;
+    --layer-overlay: 800;
+    --layer-drawer: 900;
+    --layer-modal: 1000;
+    --layer-toast: 1100;
+    --layer-max: 9999;
+
+    /* radius */
+    --radius-xs: 0.25rem; /* 4px */
+    --radius-sm: 0.5rem; /* 8px */
+    --radius-base: 0.75rem; /* 12px */
+    --radius-md: 1rem; /* 16px */
+    --radius-lg: 1.25rem; /* 20px */
+    --radius-xl: 2rem; /* 32px */
+    --radius-2xl: 3.75rem; /* 60px */
+
+    /* breakpoints */
+    --breakpoint-*: initial;
+    --breakpoint-tablet: 48em;   /* 768px */
+    --breakpoint-laptop: 64em;   /* 1024px */
+    --breakpoint-desktop: 80em;  /* 1280px */
+}
+
+
+/* -----------------------------------------------------------
+   THEME INLINE VARIABLES
+   ----------------------------------------------------------- */
+@theme inline {
+    /* colors */
+    --color-primary: rgb(var(--color-primary-rgb) / 1);
+    --color-secondary: rgb(var(--color-secondary-rgb) / 1);
+    --color-tertiary: rgb(var(--color-tertiary-rgb) / 1);
+    --color-light: rgb(var(--color-light-rgb) / 1);
+    --color-rating: rgb(var(--color-rating-rgb) / 1);
+    --color-overlay: rgb(var(--color-overlay-rgb) / var(--overlay-opacity));
+    
+    --color-black: rgb(var(--color-black-rgb) / 1);
+    --color-white: rgb(var(--color-white-rgb) / 1);
+    --color-error: rgb(var(--color-error-rgb) / 1);
+    --color-success: rgb(var(--color-success-rgb) / 1);
+
+    /* spacing */
+    --spacing-3xs: var(--space-3xs);
+    --spacing-2xs: var(--space-2xs);
+    --spacing-xs: var(--space-xs);
+    --spacing-sm: var(--space-sm);
+    --spacing-base: var(--space-base);
+    --spacing-md: var(--space-md);
+    --spacing-lg: var(--space-lg);
+    --spacing-xl: var(--space-xl);
+    --spacing-2xl: var(--space-2xl);
+    --spacing-3xl: var(--space-3xl);
+    --spacing-4xl: var(--space-4xl);
+    --spacing-5xl: var(--space-5xl);
+    --spacing-6xl: var(--space-6xl);
+    --spacing-7xl: var(--space-7xl);
+    --spacing-8xl: var(--space-8xl);
+    --spacing-9xl: var(--space-9xl);
+    --spacing-10xl: var(--space-10xl);
+    --spacing-11xl: var(--space-11xl);
+    --spacing-12xl: var(--space-12xl);
+    --spacing-13xl: var(--space-13xl);
+
+    /* containers */
+    --container-*: initial;
+    --container-tablet: var(--breakpoint-tablet);
+    --container-laptop: var(--breakpoint-laptop);
+    --container-desktop: var(--breakpoint-desktop);
+}

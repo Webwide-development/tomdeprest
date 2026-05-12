@@ -1,0 +1,10 @@
+/* import all files from the components folder */
+@import './badge.css';
+@import './button.css';
+@import './card.css';
+@import './footer.css';
+@import './form.css';
+@import './header.css';
+@import './hero.css';
+@import './icon.css';
+@import './spacer.css';

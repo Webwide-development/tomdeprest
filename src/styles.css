@@ -1,0 +1,12 @@
+/* Import alle files uit de src folder, alle folder hebben een _index.css file die wordt gebruikt om alle files uit die folder te importeren */
+@import "tailwindcss";
+
+/* Custom styling */
+@import './base/_index'; /* Custom base styling */
+
+@import './components/_index.css'; /* Custom components */
+
+@import './utilities/_index.css'; /* Custom utilities */
+
+/* Exclude assets folder */
+@source not "../../assets";

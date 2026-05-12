@@ -1,0 +1,10 @@
+# Dependencies
+node_modules
+
+# Editor directories & files
+.idea
+.vscode
+assets/styles.css
+
+# Varia
+logs

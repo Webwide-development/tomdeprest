@@ -1,0 +1,52 @@
+/* Spacer component styles */
+@layer components {
+    /* Fill opposite direction */
+    .layout-panel-flex--column > .spacer-block {
+        @apply w-full;
+    }
+
+    .layout-panel-flex--row > .spacer-block {
+        @apply h-full;
+    }
+
+    /* Flex - Percent */
+    :is(.layout-panel-flex--row, .layout-panel-flex--column) > .spacer-block--size-percent {
+        flex: var(--spacer-size);
+    }
+
+    /* Flex - Pixel */
+    .layout-panel-flex--row > .spacer-block--size-pixel {        
+        width: var(--spacer-size);
+    }
+
+    .layout-panel-flex--column > .spacer-block--size-pixel {
+        height: var(--spacer-size);
+    }
+
+    /* Mobile */
+    @media screen and (max-width: theme(--breakpoint-tablet)) {
+        /* Percent */
+        .layout-panel-flex--row:not(.mobile-column) > .spacer-block--size-mobile-percent {
+            @apply h-full;
+            flex: var(--spacer-size-mobile);
+        }
+
+        .layout-panel-flex--column > .spacer-block--size-mobile-percent,
+        .mobile-column > .spacer-block--size-percent:not(.spacer-block--size-mobile-pixel) {
+            @apply w-full;
+            flex: var(--spacer-size-mobile);
+        }
+
+        /* Pixel */
+        .layout-panel-flex--row:not(.mobile-column) > .spacer-block--size-mobile-pixel {
+            @apply h-full;
+            width: var(--spacer-size-mobile);
+        }
+
+        .layout-panel-flex--column > .spacer-block--size-mobile-pixel,
+        .mobile-column > .spacer-block--size-mobile-pixel {
+            @apply flex-0 w-full;
+            height: var(--spacer-size-mobile);
+        }
+    }
+}

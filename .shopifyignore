@@ -1,0 +1,12 @@
+node_modules
+package.json
+package-lock.json
+src/*.<file_extension>
+vite.config.json
+tailwind.config.js
+postcss.config.js
+.gitignore
+vscode/*.<file_extension>
+*.md
+.git/*.<file_extension>
+.github/*.<file_extension>
