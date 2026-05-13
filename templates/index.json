@@ -88,6 +88,7 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
+        "image_1": "shopify://shop_images/hero-img.avif",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
@@ -107,8 +108,8 @@
         "section_height": "full-screen",
         "section_height_custom": 50,
         "color_scheme": "scheme-1",
-        "toggle_overlay": false,
-        "overlay_color": "#12121266",
+        "toggle_overlay": true,
+        "overlay_color": "#f5efea0d",
         "overlay_style": "solid",
         "gradient_direction": "to bottom",
         "blurred_reflection": false,
