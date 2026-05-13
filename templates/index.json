@@ -270,7 +270,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -358,7 +358,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -566,7 +566,7 @@
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
         "gap": 28,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-3",
         "padding-block-start": 78,
         "padding-block-end": 100
       }
