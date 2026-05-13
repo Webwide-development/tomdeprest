@@ -62,6 +62,7 @@
         "image_kj9jUf": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/about-section__img.webp",
             "link": "",
             "image_ratio": "square",
             "width": "fill",
@@ -123,7 +124,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Ons kenmerkende product</h2>",
+                "text": "<h2>Mijn verhaal</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -148,9 +149,9 @@
             "text_WbcDd6": {
               "type": "text",
               "settings": {
-                "text": "<p>Met zorg gemaakt en onvoorwaardelijk geliefd bij onze klanten, overtreft deze bestseller alle verwachtingen.</p>",
-                "width": "fit-content",
-                "max_width": "narrow",
+                "text": "<p>Een kinesitherapeut die gespecialiseerd is in neurotherapie en kinesiologie. Mijn passie ligt in de wetenschap/neuroscience van het effect van emoties op het lichaam.  </p><p>Na 20 jaar ervaring merkte ik aan de soort klachten hoe onze  maatschappij verandert. Het klachtenpatroon verandert mee met het verwachtingspatroon van de maatschappij. Steeds meer chronische klachten, meer en meer wordt duidelijk hoe emoties aan de basis liggen van ontzettend veel lichamelijke klachten. Daarom ben ik mij verder gaan specialiseren in het totaalbeeld van de mens en hoe de emoties uit het lichaam te halen.</p>",
+                "width": "100%",
+                "max_width": "none",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
@@ -169,26 +170,11 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
-            },
-            "button_GQnUq8": {
-              "type": "button",
-              "settings": {
-                "label": "Shop nu",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
             }
           },
           "block_order": [
             "text_bLBe4A",
-            "text_WbcDd6",
-            "button_GQnUq8"
+            "text_WbcDd6"
           ]
         }
       },

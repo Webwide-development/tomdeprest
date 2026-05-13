@@ -124,6 +124,7 @@
         "image_pkY3Qg": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/about-section__img.webp",
             "link": "",
             "image_ratio": "square",
             "width": "fill",
