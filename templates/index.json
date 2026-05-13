@@ -113,8 +113,8 @@
         "gradient_direction": "to bottom",
         "blurred_reflection": false,
         "reflection_opacity": 75,
-        "padding-block-start": 100,
-        "padding-block-end": 72
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     },
     "section_bnEFrU": {
@@ -282,8 +282,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 40,
-        "padding-block-end": 40
+        "padding-block-start": 78,
+        "padding-block-end": 78
       }
     },
     "section_cbn7jz": {
@@ -370,8 +370,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 100,
-        "padding-block-end": 100
+        "padding-block-start": 78,
+        "padding-block-end": 78
       }
     },
     "product_list_fa6P9H": {
@@ -567,7 +567,7 @@
         "horizontal_alignment": "flex-start",
         "gap": 28,
         "color_scheme": "scheme-1",
-        "padding-block-start": 100,
+        "padding-block-start": 78,
         "padding-block-end": 100
       }
     },
@@ -1019,8 +1019,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 32,
-        "padding-block-end": 32
+        "padding-block-start": 100,
+        "padding-block-end": 100
       }
     }
   },
