@@ -275,7 +275,7 @@
         "card_row_end": "3",
         "color_scheme": "scheme-3",
         "padding-block-start": 156,
-        "padding-block-end": 156,
+        "padding-block-end": 80,
         "padding-inline-start": 0,
         "padding-inline-end": 0
       }
@@ -364,8 +364,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 100,
-        "padding-block-end": 100
+        "padding-block-start": 78,
+        "padding-block-end": 78
       }
     },
     "product_list_fa6P9H": {
