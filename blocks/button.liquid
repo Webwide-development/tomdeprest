@@ -1,5 +1,5 @@
 
-{% render 'button', link: block.settings.link %}
+{% render 'button', link: block.settings.link, block: block %}
 
 {% schema %}
 {
@@ -35,6 +35,10 @@
         {
           "value": "button-secondary",
           "label": "t:options.secondary"
+        },        
+        {
+          "value": "button-tertiary",
+          "label": "t:options.tertiary"
         },
         {
           "value": "link",

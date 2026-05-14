@@ -9,11 +9,6 @@
     --hero-height-offset: var(--header-group-height, 0);
   }
 
-  .hero {
-    position: relative;
-    min-height: calc(var(--hero-min-height) - var(--hero-height-offset));
-  }
-
   .hero[data-shopify-visual-preview] {
     --hero-min-height: 600px;
 
@@ -21,12 +16,13 @@
   }
 
   .hero__container {
-    --section-min-height: var(--hero-min-height);
-    
+    --section-min-height: calc(var(--hero-min-height) - var(--header-group-height) - var(--page-margin));
+    --section-top-offset: var(--header-height);
+
     position: relative;
     overflow: hidden;
     border: var(--hero-border-width) var(--hero-border-style) rgb(var(--color-border-rgb) / var(--hero-border-opacity));
-    min-height: inherit;
+    min-height: var(--section-min-height) !important; /* Overwriting min-height standard .section min-height variable */
     align-items: var(--vertical-alignment-mobile);
     justify-content: var(--horizontal-alignment);
     z-index: var(--layer-base);
@@ -73,14 +69,14 @@
 
     .hero__media-wrapper {
       /* When there are no blocks and the height is auto, allow the image to appear. */
-      position: relative;
+      @apply relative;
     }
   }
 
   .hero__image,
   .hero__video,
   .hero__video-poster {
-    height: 100%;
+    height: 100% !important;
     width: 100%;
     object-fit: cover;
     object-position: center center;
@@ -94,28 +90,16 @@
   .hero__image--mobile,
   .hero__video--mobile,
   .hero__video-wrapper--mobile {
-    display: none;
+    @apply block desktop:hidden;
   }
 
   .hero__image--desktop,
   .hero__video--desktop,
   .hero__video-wrapper--desktop {
-    display: block;
+    @apply hidden desktop:block;
   }
 
-  @media screen and (max-width: 749px) {
-    .hero__image--desktop,
-    .hero__video--desktop,
-    .hero__video-wrapper--desktop {
-      display: none;
-    }
-
-    .hero__image--mobile,
-    .hero__video--mobile,
-    .hero__video-wrapper--mobile {
-      display: block;
-    }
-
+  @media screen and (max-width: theme(--breakpoint-desktop)) {
     .hero__media-wrapper {
       grid-template-columns: repeat(var(--hero-media-count-mobile, 1), 1fr);
     }
@@ -128,11 +112,11 @@
   }
 
   .hero__video-wrapper--desktop {
-    position: relative;
+    @apply relative;
   }
 
   .hero__video-poster--desktop {
-    position: absolute;
+    @apply absolute;
   }
 
   .hero__link {
@@ -185,19 +169,11 @@
   }
 
   .hero__blurred-image--desktop {
-    display: none;
-
-    @media screen and (min-width: 750px) {
-      display: block;
-    }
+    @apply max-desktop:hidden;
   }
 
   .hero__blurred-image--mobile {
-    display: block;
-
-    @media screen and (min-width: 750px) {
-      display: none;
-    }
+    @apply block desktop:hidden;
   }
 
   .hero__blurred-image img,
