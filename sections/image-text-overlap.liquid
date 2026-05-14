@@ -1,0 +1,314 @@
+{% capture children %}
+  {% content_for 'blocks' %}
+{% endcapture %}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --image-text-overlap-max-width: {{ section.settings.content_max_width }}px;
+
+    --image-column-start: {{ section.settings.image_column_start }};
+    --image-column-end: {{ section.settings.image_column_end }};
+    --image-row-start: {{ section.settings.image_row_start }};
+    --image-row-end: {{ section.settings.image_row_end }};
+
+    --card-column-start: {{ section.settings.card_column_start }};
+    --card-column-end: {{ section.settings.card_column_end }};
+    --card-row-start: {{ section.settings.card_row_start }};
+    --card-row-end: {{ section.settings.card_row_end }};
+  }
+</style>
+
+{% render 'section',
+  section: section,
+  children: children,
+  class: 'image-text-overlap'
+%}
+
+{% schema %}
+{
+  "name": "Image text overlap",
+  "class": "section-wrapper section-wrapper--image-text-overlap",
+  "blocks": [
+    {
+      "type": "@theme"
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "content_direction",
+      "label": "t:settings.direction",
+      "options": [
+        {
+          "value": "row",
+          "label": "t:options.horizontal"
+        },
+        {
+          "value": "column",
+          "label": "t:options.vertical"
+        }
+      ],
+      "default": "row"
+    },
+    {
+      "type": "checkbox",
+      "id": "vertical_on_mobile",
+      "label": "t:settings.vertical_on_mobile",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+    "type": "header",
+    "content": "Overlap layout"
+    },
+    {
+    "type": "range",
+    "id": "content_max_width",
+    "label": "Content max width",
+    "min": 800,
+    "max": 1600,
+    "step": 20,
+    "unit": "px",
+    "default": 1180
+    },
+    {
+    "type": "select",
+    "id": "image_column_start",
+    "label": "Image column start",
+    "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" }
+    ],
+    "default": "1"
+    },
+    {
+    "type": "select",
+    "id": "image_column_end",
+    "label": "Image column end",
+    "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+    ],
+    "default": "3"
+    },
+    {
+    "type": "select",
+    "id": "image_row_start",
+    "label": "Image row start",
+    "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" }
+    ],
+    "default": "1"
+    },
+    {
+    "type": "select",
+    "id": "image_row_end",
+    "label": "Image row end",
+    "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+    ],
+    "default": "4"
+    },
+    {
+    "type": "select",
+    "id": "card_column_start",
+    "label": "Card column start",
+    "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" }
+    ],
+    "default": "2"
+    },
+    {
+    "type": "select",
+    "id": "card_column_end",
+    "label": "Card column end",
+    "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+    ],
+    "default": "4"
+    },
+    {
+    "type": "select",
+    "id": "card_row_start",
+    "label": "Card row start",
+    "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" }
+    ],
+    "default": "2"
+    },
+    {
+    "type": "select",
+    "id": "card_row_end",
+    "label": "Card row end",
+    "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+    ],
+    "default": "3"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-3"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 156,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 156,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 156,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 156,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image text overlap",
+      "category": "t:categories.storytelling",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "gap": 0,
+        "color_scheme": "scheme-3",
+        "padding-block-start": 32,
+        "padding-block-end": 32
+      },
+      "blocks": {
+        "image": {
+          "type": "image",
+          "settings": {
+            "image_ratio": "square",
+            "width": "custom",
+            "custom_width": 58,
+            "width_mobile": "fill"
+          }
+        },
+        "group": {
+          "type": "group",
+          "settings": {
+            "width": "custom",
+            "custom_width": 46,
+            "width_mobile": "fill",
+            "content_direction": "column",
+            "gap": 24,
+            "padding-block-start": 32,
+            "padding-block-end": 32,
+            "padding-inline-start": 32,
+            "padding-inline-end": 32,
+            "background_media": "none",
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-1"
+          },
+          "blocks": {
+            "heading": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h2>Even stilstaan begint bij jezelf</h2>",
+                "type_preset": "h3",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left"
+              }
+            },
+            "text": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Je blijft doorgaan.<br>Altijd ‘aan’.<br>Tot je voelt dat het te veel wordt.</p>",
+                "type_preset": "rte",
+                "width": "fit-content",
+                "max_width": "narrow",
+                "alignment": "left"
+              }
+            },
+            "button": {
+              "type": "button",
+              "settings": {
+                "label": "Ontdek mijn aanpak",
+                "link": "shopify://collections/all",
+                "style_class": "button-secondary",
+                "width": "fit-content",
+                "width_mobile": "fit-content"
+              }
+            }
+          },
+          "block_order": ["heading", "text", "button"]
+        }
+      },
+      "block_order": ["image", "group"]
+    }
+  ]
+}
+{% endschema %}

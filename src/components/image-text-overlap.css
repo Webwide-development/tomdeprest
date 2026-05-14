@@ -1,0 +1,51 @@
+@layer components {
+  .section-wrapper--image-text-overlap .section-content-wrapper {    
+    @apply block! tablet:grid!;
+    grid-template-columns:
+        minmax(0, 1fr)
+        120px
+        minmax(0, 1fr);
+    grid-template-rows:
+        minmax(0, 1fr)
+        120px
+        minmax(0, 1fr);
+    max-width: var(--image-text-overlap-max-width);
+    margin-inline: auto !important;
+    align-items: center;
+
+  }
+
+  .section-wrapper--image-text-overlap .section-content-wrapper > .image-block {
+    grid-column: var(--image-column-start) / var(--image-column-end);
+    grid-row: var(--image-row-start) / var(--image-row-end);
+    width: 100% !important;
+    max-width: none;
+    z-index: 1;
+  }
+
+  .section-wrapper--image-text-overlap .image-block__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .section-wrapper--image-text-overlap .section-content-wrapper > .group-block {
+    grid-column: var(--card-column-start) / var(--card-column-end);
+    grid-row: var(--card-row-start) / var(--card-row-end);
+    width: 100% !important;
+    max-width: none;
+    z-index: 2;
+  }
+
+  .section-wrapper--image-text-overlap .group-block-content {
+    gap: 24px !important;
+  }
+
+  .section-wrapper--image-text-overlap h2 {
+    margin: 0;
+    font-size: clamp(36px, 4vw, 48px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+}

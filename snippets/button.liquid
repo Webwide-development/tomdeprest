@@ -1,14 +1,21 @@
 {%- doc -%}
-  Intended for use in a block similar to the button block.
+  Renders a configurable button/link.
 
-  @param {string} link - link to render
-  @param {object} [block] - The block
-
-  @example
-  {% render 'button', link: '/collections/all' %}
+  @param {string} link - Link to render
+  @param {object} block - Button block
 {%- enddoc -%}
 
 {% assign block_settings = block.settings %}
+{% assign button_width_class = 'button--fit' %}
+{% assign button_width_mobile_class = 'button--fit-mobile' %}
+
+{% if block_settings.width == 'custom' %}
+  {% assign button_width_class = 'button--custom' %}
+{% endif %}
+
+{% if block_settings.width_mobile == 'custom' %}
+  {% assign button_width_mobile_class = 'button--custom-mobile' %}
+{% endif %}
 
 <a
   {% if link == blank %}
@@ -18,28 +25,21 @@
     href="{{ link }}"
   {% endif %}
   class="
-    size-style
+    button-base
     {{ block_settings.style_class }}
+    {{ button_width_class }}
+    {{ button_width_mobile_class }}
     {{ block_settings.style_class }}--{{ block.id }}
   "
-  style="{% render 'size-style', settings: block_settings %}"
-  {%- if block_settings.open_in_new_tab -%}
+  style="
+    --button-custom-width: {{ block_settings.custom_width }}%;
+    --button-custom-width-mobile: {{ block_settings.custom_width_mobile }}%;
+  "
+  {% if block_settings.open_in_new_tab %}
     target="_blank"
     rel="noopener noreferrer"
-  {%- endif -%}
+  {% endif %}
   {{ block.shopify_attributes }}
 >
   {{ block_settings.label }}
 </a>
-
-{% stylesheet %}
-  .link {
-    text-decoration: none;
-    text-decoration-color: currentcolor;
-
-    &:hover {
-      color: var(--color-primary-hover);
-      text-decoration-color: transparent;
-    }
-  }
-{% endstylesheet %}
