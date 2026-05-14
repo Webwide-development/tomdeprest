@@ -1054,8 +1054,8 @@
         "contact_form_9zTdQk": {
           "type": "contact-form",
           "settings": {
-            "width": "fit-content",
-            "custom_width": 50,
+            "width": "custom",
+            "custom_width": 75,
             "width_mobile": "fit-content",
             "custom_width_mobile": 100,
             "inherit_color_scheme": true,
