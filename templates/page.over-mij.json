@@ -249,7 +249,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Mijn verhaal</h2>",
+                "text": "<h2>Mijn aanpak</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -274,7 +274,7 @@
             "text_44DJxc": {
               "type": "text",
               "settings": {
-                "text": "<p>Een kinesitherapeut die gespecialiseerd is in neurotherapie en kinesiologie. Mijn passie ligt in de wetenschap/neuroscience van het effect van emoties op het lichaam.  </p><p>Na 20 jaar ervaring merkte ik aan de soort klachten hoe onze  maatschappij verandert. Het klachtenpatroon verandert mee met het verwachtingspatroon van de maatschappij. Steeds meer chronische klachten, meer en meer wordt duidelijk hoe emoties aan de basis liggen van ontzettend veel lichamelijke klachten. Daarom ben ik mij verder gaan specialiseren in het totaalbeeld van de mens en hoe de emoties uit het lichaam te halen.</p>",
+                "text": "<p>Een kinesitherapeut die gespecialiseerd is in neurotherapie en kinesiologie. Mijn passie ligt in de wetenschap/neuroscience van het effect van emoties op het lichaam.  </p>",
                 "width": "fit-content",
                 "max_width": "narrow",
                 "alignment": "left",
