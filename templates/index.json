@@ -118,6 +118,168 @@
         "padding-block-end": 0
       }
     },
+    "image_text_overlap_3GtGQP": {
+      "type": "image-text-overlap",
+      "blocks": {
+        "image_DyF8W6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/about-section__img.webp",
+            "link": "",
+            "image_ratio": "square",
+            "width": "custom",
+            "custom_width": 58,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "group_7df8Qq": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 40,
+            "width": "custom",
+            "custom_width": 46,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-1",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 44,
+            "padding-block-end": 44,
+            "padding-inline-start": 44,
+            "padding-inline-end": 44
+          },
+          "blocks": {
+            "text_YR34UH": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h2>Even stilstaan begint bij jezelf</h2>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h3",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_TBNKfV": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Je blijft doorgaan.<br>Altijd ‘aan’.<br>Tot je voelt dat het te veel wordt.</p>",
+                "width": "fit-content",
+                "max_width": "narrow",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button_8fezte": {
+              "type": "button",
+              "settings": {
+                "label": "Ontdek hoe het anders kan",
+                "link": "shopify://pages/over-mij",
+                "open_in_new_tab": false,
+                "style_class": "button-secondary",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_YR34UH",
+            "text_TBNKfV",
+            "button_8fezte"
+          ]
+        }
+      },
+      "block_order": [
+        "image_DyF8W6",
+        "group_7df8Qq"
+      ],
+      "name": "Image text overlap",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "gap": 0,
+        "content_max_width": 1180,
+        "image_column_start": "1",
+        "image_column_end": "3",
+        "image_row_start": "1",
+        "image_row_end": "4",
+        "card_column_start": "2",
+        "card_column_end": "4",
+        "card_row_start": "2",
+        "card_row_end": "3",
+        "color_scheme": "scheme-3",
+        "padding-block-start": 156,
+        "padding-block-end": 156,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
     "section_bnEFrU": {
       "type": "section",
       "blocks": {
@@ -1028,6 +1190,7 @@
   },
   "order": [
     "hero_jVaWmY",
+    "image_text_overlap_3GtGQP",
     "section_bnEFrU",
     "section_cbn7jz",
     "product_list_fa6P9H",
