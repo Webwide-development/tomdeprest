@@ -56,17 +56,17 @@
         "padding-block-end": 80
       }
     },
-    "section_i4WUGG": {
-      "type": "section",
+    "image_text_overlap_WTerL8": {
+      "type": "image-text-overlap",
       "blocks": {
-        "image_kj9jUf": {
+        "image_M4Nyhw": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/about-section__img.webp",
             "link": "",
             "image_ratio": "square",
-            "width": "fill",
-            "custom_width": 100,
+            "width": "custom",
+            "custom_width": 58,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
             "height": "fit",
@@ -81,7 +81,7 @@
           },
           "blocks": {}
         },
-        "group_ihCTRM": {
+        "group_qdHzRB": {
           "type": "group",
           "settings": {
             "content_direction": "column",
@@ -91,15 +91,15 @@
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
+            "gap": 24,
             "width": "custom",
-            "custom_width": 100,
+            "custom_width": 46,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
             "height": "fit",
             "custom_height": 100,
             "inherit_color_scheme": false,
-            "color_scheme": "",
+            "color_scheme": "scheme-1",
             "background_media": "none",
             "video_position": "cover",
             "background_image_position": "cover",
@@ -107,20 +107,20 @@
             "border_width": 1,
             "border_opacity": 100,
             "border_radius": 0,
-            "toggle_overlay": true,
-            "overlay_color": "#f5efea0d",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
             "overlay_style": "solid",
             "gradient_direction": "to top",
             "link": "",
             "open_in_new_tab": false,
             "placeholder": "",
-            "padding-block-start": 44,
-            "padding-block-end": 44,
-            "padding-inline-start": 44,
-            "padding-inline-end": 44
+            "padding-block-start": 32,
+            "padding-block-end": 32,
+            "padding-inline-start": 32,
+            "padding-inline-end": 32
           },
           "blocks": {
-            "text_bLBe4A": {
+            "text_i9jjbk": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
@@ -146,12 +146,12 @@
               },
               "blocks": {}
             },
-            "text_WbcDd6": {
+            "text_rqxxWm": {
               "type": "text",
               "settings": {
                 "text": "<p>Een kinesitherapeut die gespecialiseerd is in neurotherapie en kinesiologie. Mijn passie ligt in de wetenschap/neuroscience van het effect van emoties op het lichaam.  </p><p>Na 20 jaar ervaring merkte ik aan de soort klachten hoe onze  maatschappij verandert. Het klachtenpatroon verandert mee met het verwachtingspatroon van de maatschappij. Steeds meer chronische klachten, meer en meer wordt duidelijk hoe emoties aan de basis liggen van ontzettend veel lichamelijke klachten. Daarom ben ik mij verder gaan specialiseren in het totaalbeeld van de mens en hoe de emoties uit het lichaam te halen.</p>",
-                "width": "100%",
-                "max_width": "none",
+                "width": "fit-content",
+                "max_width": "narrow",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
@@ -173,42 +173,181 @@
             }
           },
           "block_order": [
-            "text_bLBe4A",
-            "text_WbcDd6"
+            "text_i9jjbk",
+            "text_rqxxWm"
           ]
         }
       },
       "block_order": [
-        "image_kj9jUf",
-        "group_ihCTRM"
+        "image_M4Nyhw",
+        "group_qdHzRB"
       ],
-      "name": "t:names.image_with_text",
+      "name": "Image text overlap",
       "settings": {
         "content_direction": "row",
         "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 32,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
+        "gap": 0,
+        "content_max_width": 1180,
+        "image_column_start": "1",
+        "image_column_end": "3",
+        "image_row_start": "1",
+        "image_row_end": "4",
+        "card_column_start": "2",
+        "card_column_end": "4",
+        "card_row_start": "2",
+        "card_row_end": "3",
         "color_scheme": "scheme-3",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 100,
-        "padding-block-end": 100
+        "padding-block-start": 156,
+        "padding-block-end": 156,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "image_text_overlap_UdYA7X": {
+      "type": "image-text-overlap",
+      "blocks": {
+        "group_3iQ7t7": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 24,
+            "width": "custom",
+            "custom_width": 46,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-3",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 32,
+            "padding-block-end": 32,
+            "padding-inline-start": 32,
+            "padding-inline-end": 32
+          },
+          "blocks": {
+            "text_dJXpT7": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h2>Mijn verhaal</h2>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h3",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_44DJxc": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Een kinesitherapeut die gespecialiseerd is in neurotherapie en kinesiologie. Mijn passie ligt in de wetenschap/neuroscience van het effect van emoties op het lichaam.  </p><p>Na 20 jaar ervaring merkte ik aan de soort klachten hoe onze  maatschappij verandert. Het klachtenpatroon verandert mee met het verwachtingspatroon van de maatschappij. Steeds meer chronische klachten, meer en meer wordt duidelijk hoe emoties aan de basis liggen van ontzettend veel lichamelijke klachten. Daarom ben ik mij verder gaan specialiseren in het totaalbeeld van de mens en hoe de emoties uit het lichaam te halen.</p>",
+                "width": "fit-content",
+                "max_width": "narrow",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_dJXpT7",
+            "text_44DJxc"
+          ]
+        },
+        "image_NhDHtm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/about-section__img.webp",
+            "link": "",
+            "image_ratio": "square",
+            "width": "custom",
+            "custom_width": 58,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "group_3iQ7t7",
+        "image_NhDHtm"
+      ],
+      "name": "Image text overlap",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "gap": 0,
+        "content_max_width": 1180,
+        "image_column_start": "2",
+        "image_column_end": "4",
+        "image_row_start": "1",
+        "image_row_end": "4",
+        "card_column_start": "1",
+        "card_column_end": "3",
+        "card_row_start": "2",
+        "card_row_end": "3",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 156,
+        "padding-block-end": 156,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
       }
     },
     "section_qmzjry": {
@@ -593,7 +732,8 @@
   },
   "order": [
     "main",
-    "section_i4WUGG",
+    "image_text_overlap_WTerL8",
+    "image_text_overlap_UdYA7X",
     "section_qmzjry",
     "section_TDx9tW",
     "section_pAAJbr"
