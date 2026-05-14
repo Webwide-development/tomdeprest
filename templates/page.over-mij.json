@@ -412,7 +412,7 @@
             "label": "Contacteer mij  vrijblijvend",
             "link": "shopify://pages/contact",
             "open_in_new_tab": false,
-            "style_class": "button",
+            "style_class": "button-secondary",
             "width": "fit-content",
             "custom_width": 100,
             "width_mobile": "fit-content",
@@ -512,8 +512,8 @@
         "contact_form_p9wBbe": {
           "type": "contact-form",
           "settings": {
-            "width": "fit-content",
-            "custom_width": 50,
+            "width": "custom",
+            "custom_width": 75,
             "width_mobile": "fit-content",
             "custom_width_mobile": 100,
             "inherit_color_scheme": true,
