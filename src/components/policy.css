@@ -1,0 +1,34 @@
+@layer components {
+    .shopify-policy__container {
+        --heading-spacer: 1;
+        --spacer-multiplier: 16px;
+
+        @apply mb-7xl!;
+        max-width: calc(var(--wide-content-width) * 1.5) !important;
+
+        /* Typography & spacing */
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: calc(var(--heading-spacer) * var(--spacer-multiplier)) !important;
+        }
+
+        h1 { --heading-spacer: 3.5; }
+        h2 { --heading-spacer: 2.5; }
+        h3 { --heading-spacer: 2; }
+        h4 { --heading-spacer: 1.5; }
+
+        h1 {
+            @apply text-4xl! tablet:text-5xl! desktop:text-6xl!;
+        }
+
+        h2, h3, h4 {
+            @apply text-2xl! tablet:text-3xl! desktop:text-4xl!;
+        }
+
+        .shopify-policy__body .rte p:has(+ h2),
+        .shopify-policy__body .rte p:has(+ h3),
+        .shopify-policy__body .rte p:has(+ h4) {
+            @apply opacity-40;
+            @apply my-(--space-6xl);
+        }
+    }
+}
