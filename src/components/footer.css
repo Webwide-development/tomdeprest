@@ -1,7 +1,7 @@
 /* Footer styles */
 @layer components {
     footer {
-        @apply mt-(--space-7xl);
+        @apply mt-(--space-lg) desktop:mt-(--space-7xl);
     }
 
     footer .section-background,

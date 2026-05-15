@@ -174,4 +174,9 @@
     color: var(--color-primary);
     text-decoration-color: transparent;
   }
+
+  /* Hide add-to-cart button icon - not the icon of the quick-add-button */
+  button.add-to-cart-button:not(.quick-add__button) .svg-wrapper.add-to-cart-icon {
+    @apply hidden!;
+  }
 }
