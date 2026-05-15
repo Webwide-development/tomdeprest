@@ -31,8 +31,8 @@ const SUCCESS_MESSAGE_DISPLAY_DURATION = 5000;
 export class AddToCartComponent extends Component {
   requiredRefs = ['addToCartButton'];
 
-  /** @type {number[] | undefined} */
-  #resetTimeouts = /** @type {number[]} */ ([]);
+  /** @type {number[]} */
+  #resetTimeouts = [];
 
   connectedCallback() {
     super.connectedCallback();
@@ -127,13 +127,8 @@ export class AddToCartComponent extends Component {
   /**
    * Animates the add to cart button.
    */
-  animateAddToCart = async function () {
+  animateAddToCart = async () => {
     const { addToCartButton } = this.refs;
-
-    // Initialize the array if it doesn't exist
-    if (!this.#resetTimeouts) {
-      this.#resetTimeouts = [];
-    }
 
     // Clear all existing timeouts
     this.#resetTimeouts.forEach(/** @param {number} timeoutId */ (timeoutId) => clearTimeout(timeoutId));
@@ -200,11 +195,23 @@ class ProductFormComponent extends Component {
 
     const { signal } = this.#abortController;
     const target = this.closest('.shopify-section, dialog, product-card');
-    target?.addEventListener(ThemeEvents.variantUpdate, this.#onVariantUpdate, { signal });
-    target?.addEventListener(ThemeEvents.variantSelected, this.#onVariantSelected, { signal });
+    target?.addEventListener(
+      ThemeEvents.variantUpdate,
+      /** @type {EventListener} */ (/** @type {unknown} */ (this.#onVariantUpdate)),
+      { signal }
+    );
 
-    // Listen for cart updates to sync data-cart-quantity
-    document.addEventListener(ThemeEvents.cartUpdate, this.#onCartUpdate, { signal });
+    target?.addEventListener(
+      ThemeEvents.variantSelected,
+      /** @type {EventListener} */ (/** @type {unknown} */ (this.#onVariantSelected)),
+      { signal }
+    );
+
+    document.addEventListener(
+      ThemeEvents.cartUpdate,
+      /** @type {EventListener} */ (/** @type {unknown} */ (this.#onCartUpdate)),
+      { signal }
+    );
   }
 
   disconnectedCallback() {
@@ -360,10 +367,22 @@ class ProductFormComponent extends Component {
       ...fetchCfg,
       headers: {
         ...fetchCfg.headers,
-        Accept: 'text/html',
+        Accept: 'application/json',
       },
     })
-      .then((response) => response.json())
+      .then(async (response) => {
+        const text = await response.text();
+
+        if (!response.ok) {
+          throw new Error(`Cart add failed: ${response.status} ${response.statusText} — ${text || 'No response body'}`);
+        }
+
+        if (!text) {
+          throw new Error('Cart add failed: empty response body');
+        }
+
+        return JSON.parse(text);
+      })
       .then(async (response) => {
         if (response.status) {
           this.dispatchEvent(
