@@ -38,10 +38,6 @@
     z-index: 2;
   }
 
-  .section-wrapper--image-text-overlap .group-block-content {
-    gap: 24px !important;
-  }
-
   .section-wrapper--image-text-overlap h2 {
     margin: 0;
     font-size: clamp(36px, 4vw, 48px);

@@ -1,0 +1,48 @@
+@layer components {
+  .section-resource-list--meditations .product-card__content {
+    --meditation-card-padding-inline: clamp(24px, 4vw, 50px);
+    --meditation-card-padding-bottom: clamp(32px, 4vw, 50px);
+
+    padding: 0 !important;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .section-resource-list--meditations .card-gallery {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .section-resource-list--meditations .product-card__content > :not(.card-gallery):not(.product-grid-view-zoom-out--details):not(script) {
+    padding-inline: var(--meditation-card-padding-inline) !important;
+  }
+
+  .section-resource-list--meditations .product-card__content > a.contents.user-select-text .text-block {
+    padding-inline: var(--meditation-card-padding-inline) !important;
+
+    /* Typography styling of the product-card */
+    p {
+        @apply text-xl!;
+        line-height: 1.2 !important;
+    }
+    
+  }
+
+  .section-resource-list--meditations .product-card__content > .buy-buttons-block {
+    padding-block-end: var(--meditation-card-padding-bottom) !important;
+  }
+
+  .section-resource-list--meditations .add-to-cart-button.button-secondary {
+    --button-text-color: var(--color-text);
+    --button-background-color: transparent;
+    --button-border-color: var(--color-text);
+    --button-border-width: 2px;
+  }
+
+  .section-resource-list--meditations .add-to-cart-button.button-secondary:hover {
+    --button-text-color: var(--color-white);
+    --button-background-color: var(--color-primary);
+    --button-border-color: var(--color-primary);
+  }
+}

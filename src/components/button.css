@@ -6,17 +6,23 @@
     --button-border-color: transparent;
     --button-border-width: 0px;
     --button-border-radius: 0px;
+    --button-min-height: 48px;
+    --button-padding-block: 22px;
+    --button-padding-inline: 36px;
+    --button-font-size: calc(var(--font-paragraph--size) * 1.15);
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    min-height: var(--button-min-height, 48px);
-    padding-block: var(--button-padding-block, 14px);
-    padding-inline: var(--button-padding-inline, 28px);
+    min-height: var(--button-min-height);
+    padding-block: var(--button-padding-block);
+    padding-inline: var(--button-padding-inline);
 
     font-style: var(--font-paragraph--style);
-    font-size: var(--button-font-size, var(--font-paragraph--size));
+    font-size: var(--button-font-size);
+    font-weight: 500;
+    letter-spacing: 0.8px;
     line-height: 1.2;
     text-align: center;
     text-decoration: none;
@@ -32,7 +38,8 @@
     transition:
       color var(--animation-speed) var(--animation-easing),
       background-color var(--animation-speed) var(--animation-easing),
-      border-color var(--animation-speed) var(--animation-easing);
+      border-color var(--animation-speed) var(--animation-easing),
+      opacity var(--animation-speed) var(--animation-easing);
   }
 
   .button--fit {
@@ -53,62 +60,61 @@
     }
   }
 
+  /* Primary - bruin */
   .button {
-    --button-text-color: var(--color-primary-button-text);
-    --button-background-color: var(--color-primary-button-background);
-    --button-border-color: var(--color-primary-button-border);
-    --button-border-width: var(--style-border-width-primary);
-    --button-border-radius: var(--style-border-radius-buttons-primary);
+    --button-text-color: var(--color-white);
+    --button-background-color: var(--color-primary);
+    --button-border-color: var(--color-primary);
+    --button-border-width: 1px;
+    --button-border-radius: 0px;
 
-    font-family: var(--button-font-family-primary);
-    text-transform: var(--button-text-case-primary);
+    font-family: var(--button-font-family-primary, var(--font-heading--family));
+    text-transform: var(--button-text-case-primary, none);
   }
 
-  .button:hover {
-    --button-text-color: var(--color-primary-button-hover-text);
-    --button-background-color: var(--color-primary-button-hover-background);
-    --button-border-color: var(--color-primary-button-hover-border);
-  }
-
+  /* Secondary - beige/roze */
   .button-secondary {
-    --button-text-color: var(--color-secondary-button-text);
-    --button-background-color: var(--color-secondary-button-background);
-    --button-border-color: var(--color-secondary-button-border);
-    --button-border-width: var(--style-border-width-secondary);
-    --button-border-radius: var(--style-border-radius-buttons-secondary);
+    --button-text-color: var(--color-text);
+    --button-background-color: var(--color-secondary);
+    --button-border-color: var(--color-secondary);
+    --button-border-width: 1px;
+    --button-border-radius: 0px;
 
-    font-family: var(--button-font-family-secondary);
-    text-transform: var(--button-text-case-secondary);
+    font-family: var(--button-font-family-secondary, var(--font-heading--family));
+    text-transform: var(--button-text-case-secondary, none);
   }
 
-  .button-secondary:hover {
-    --button-text-color: var(--color-secondary-button-hover-text);
-    --button-background-color: var(--color-secondary-button-hover-background);
-    --button-border-color: var(--color-secondary-button-hover-border);
-  }
-
+  /* Tertiary - outline */
   .button-tertiary {
-    --button-text-color: var(--color-tertiary-button-text);
-    --button-background-color: var(--color-tertiary-button-background);
-    --button-border-color: var(--color-tertiary-button-border);
-    --button-border-width: var(--style-border-width-tertiary);
-    --button-border-radius: var(--style-border-radius-buttons-tertiary);
+    --button-text-color: var(--color-text);
+    --button-background-color: transparent;
+    --button-border-color: var(--color-text);
+    --button-border-width: 2px;
+    --button-border-radius: 0px;
 
-    font-family: var(--button-font-family-tertiary);
-    text-transform: var(--button-text-case-tertiary);
+    font-family: var(--button-font-family-tertiary, var(--font-heading--family));
+    text-transform: var(--button-text-case-tertiary, none);
   }
 
   .button-tertiary:hover {
-    --button-text-color: var(--color-tertiary-button-hover-text);
-    --button-background-color: var(--color-tertiary-button-hover-background);
-    --button-border-color: var(--color-tertiary-button-hover-border);
+    --button-text-color: var(--color-white);
+    --button-background-color: var(--color-primary);
+    --button-border-color: var(--color-primary);
   }
 
+  .button:hover,
+  .button-secondary:hover,
+  .button:focus-visible,
+  .button-secondary:focus-visible {
+    opacity: 0.88;
+  }
+
+  /* Text link */
   .link {
     min-height: 0;
     padding: 0;
 
-    color: var(--color-link, var(--color-primary));
+    color: var(--color-link, var(--color-primary)) !important;
     background: transparent;
     border: 0;
 
@@ -122,7 +128,7 @@
   }
 
   .link:hover {
-    color: var(--color-link-hover, var(--color-primary-hover));
+    color: var(--color-link-hover, var(--color-title)) !important;
     text-decoration-color: transparent;
   }
 
@@ -137,36 +143,35 @@
     pointer-events: none;
   }
 
-  /* Links */
   a {
     color: var(--link-color, var(--color, var(--color-primary)));
     text-decoration-color: transparent;
     text-decoration-thickness: 0.075em;
     text-underline-offset: 0.125em;
+
     transition:
-        text-decoration-color var(--animation-speed) var(--animation-easing),
-        color var(--animation-speed) var(--animation-easing);
+      text-decoration-color var(--animation-speed) var(--animation-easing),
+      color var(--animation-speed) var(--animation-easing);
   }
 
   :is(h1, h2, h3, h4, h5, h6, p) > a:hover {
-    color: var(--link-hover-color, var(--color-primary-hover));
+    color: var(--link-hover-color, var(--color-primary));
   }
 
-    /* Add underline to text using our paragraph styles only. */
-  p:not(.h1, .h2, .h3, .h4, .h5, .h6) 
-  a:where(:not(.button-base, .button, .button-secondary, .button-tertiary, .link)),
+  p:not(.h1, .h2, .h3, .h4, .h5, .h6)
+    a:where(:not(.button-base, .button, .button-secondary, .button-tertiary, .link)),
   .rte
-  :is(p, ul, ol, table):not(.h1, .h2, .h3, .h4, .h5, .h6)
-  a:where(:not(.button-base, .button, .button-secondary, .button-tertiary, .link)) {
+    :is(p, ul, ol, table):not(.h1, .h2, .h3, .h4, .h5, .h6)
+    a:where(:not(.button-base, .button, .button-secondary, .button-tertiary, .link)) {
     text-decoration-color: currentcolor;
-
-    &:hover {
-        text-decoration-color: transparent;
-        color: var(--color-primary-hover);
-    }
   }
 
-  .hero .button {
-    color: var(--color-white);
+  p:not(.h1, .h2, .h3, .h4, .h5, .h6)
+    a:where(:not(.button-base, .button, .button-secondary, .button-tertiary, .link)):hover,
+  .rte
+    :is(p, ul, ol, table):not(.h1, .h2, .h3, .h4, .h5, .h6)
+    a:where(:not(.button-base, .button, .button-secondary, .button-tertiary, .link)):hover {
+    color: var(--color-primary);
+    text-decoration-color: transparent;
   }
 }
