@@ -65,13 +65,20 @@
         {% endfor %}
       {% endcapture %}
 
-      {% render 'product-grid',
-        section: section,
-        children: children,
-        products: collection.products,
-        paginate: paginate,
-        enable_infinite_scroll: section.settings.enable_infinite_scroll
-      %}
+      {% if section.settings.use_product_list_layout %}
+        {% render 'product-list-collection',
+          section: section,
+          collection: collection
+        %}
+      {% else %}
+        {% render 'product-grid',
+          section: section,
+          children: children,
+          products: collection.products,
+          paginate: paginate,
+          enable_infinite_scroll: section.settings.enable_infinite_scroll
+        %}
+      {% endif %}
     {% endpaginate %}
   </div>
 </results-list>
@@ -229,6 +236,40 @@
       "step": 4,
       "default": 24,
       "visible_if": "{{ section.settings.enable_infinite_scroll == false }}"
+    },
+    {
+      "type": "header",
+      "content": "Product list layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_product_list_layout",
+      "label": "Gebruik product list layout",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "product_list_products_limit",
+      "label": "Aantal producten",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "visible_if": "{{ section.settings.use_product_list_layout == true }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "product_list_show_duration",
+      "label": "Toon duur",
+      "default": true,
+      "visible_if": "{{ section.settings.use_product_list_layout == true }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "product_list_show_price",
+      "label": "Toon prijs",
+      "default": true,
+      "visible_if": "{{ section.settings.use_product_list_layout == true }}"
     },
     {
       "type": "header",
