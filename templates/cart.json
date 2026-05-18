@@ -152,7 +152,7 @@
           "name": "t:names.product_card",
           "static": true,
           "settings": {
-            "product_card_gap": 4,
+            "product_card_gap": 32,
             "inherit_color_scheme": true,
             "color_scheme": "",
             "border": "none",
@@ -187,15 +187,15 @@
               "settings": {
                 "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
+                "alignment": "center",
+                "type_preset": "h4",
                 "font": "var(--font-body--family)",
                 "font_size": "",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
-                "color": "var(--color-foreground)",
+                "color": "var(--color-foreground-heading)",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -215,7 +215,7 @@
                 "show_tax_info": false,
                 "type_preset": "h6",
                 "width": "100%",
-                "alignment": "left",
+                "alignment": "center",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -228,12 +228,78 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "text_eNm6UE": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "{{ closest.product.description }}",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "buy_buttons_LqRDnR": {
+              "type": "buy-buttons",
+              "name": "t:names.product_buy_buttons",
+              "settings": {
+                "stacking": false,
+                "show_pickup_availability": true,
+                "gift_card_form": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button-secondary"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
             }
           },
           "block_order": [
             "product_card_gallery_PEPpfq",
             "product_title_WNMpHe",
-            "price_yXfkPX"
+            "price_yXfkPX",
+            "text_eNm6UE",
+            "buy_buttons_LqRDnR"
           ]
         }
       },
@@ -253,14 +319,135 @@
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
         "gap": 28,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-3",
         "padding-block-start": 48,
         "padding-block-end": 48
+      }
+    },
+    "section_8KNzfV": {
+      "type": "section",
+      "blocks": {
+        "text_UqdMzp": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Get in touch</h2>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h2",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground-heading)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_EPNfje": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p><strong>Tom De Prest</strong></p><p>BE0808 930 510<br/>tom.de.prest@gmail.com</p><p><strong>Praktijk</strong><br/>Rijselstraat 49, 8200 Brugge</p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "contact_form_PTHmHW": {
+          "type": "contact-form",
+          "settings": {
+            "width": "custom",
+            "custom_width": 75,
+            "width_mobile": "custom",
+            "custom_width_mobile": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "submit-button": {
+              "type": "contact-form-submit-button",
+              "static": true,
+              "settings": {
+                "label": "Verstuur bericht",
+                "style_class": "button-tertiary",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": []
+        }
+      },
+      "block_order": [
+        "text_UqdMzp",
+        "text_EPNfje",
+        "contact_form_PTHmHW"
+      ],
+      "name": "t:names.contact_form",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-1",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 100,
+        "padding-block-end": 100
       }
     }
   },
   "order": [
     "cart-section",
-    "product_list_NNFgcy"
+    "product_list_NNFgcy",
+    "section_8KNzfV"
   ]
 }
