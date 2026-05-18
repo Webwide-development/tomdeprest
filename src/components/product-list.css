@@ -10,7 +10,7 @@
     margin-inline: auto;
   }
 
-  .section-resource-list--meditations .resource-list--grid {
+  .is-homepage .section-resource-list--meditations .resource-list--grid {
     max-width: 1120px;
     margin-inline: auto;
   }
