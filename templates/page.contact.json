@@ -16,7 +16,7 @@
           "type": "text",
           "name": "t:names.title",
           "settings": {
-            "text": "<h1>{{ closest.page.title }}</h1>",
+            "text": "<h1>Contacteer mij vrijblijvend</h1>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -73,7 +73,7 @@
         "content_direction": "column",
         "gap": 32,
         "color_scheme": "",
-        "padding-block-start": 40,
+        "padding-block-start": 78,
         "padding-block-end": 0
       }
     },
@@ -167,7 +167,7 @@
                   "static": true,
                   "settings": {
                     "label": "Verstuur bericht",
-                    "style_class": "button",
+                    "style_class": "button-tertiary",
                     "width": "fit-content",
                     "custom_width": 100,
                     "width_mobile": "fit-content",
@@ -213,8 +213,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 100,
-        "padding-block-end": 100
+        "padding-block-start": 78,
+        "padding-block-end": 78
       }
     },
     "hero_UT7yYi": {
@@ -248,7 +248,7 @@
         "gradient_direction": "to top",
         "blurred_reflection": false,
         "reflection_opacity": 75,
-        "padding-block-start": 100,
+        "padding-block-start": 78,
         "padding-block-end": 100
       }
     }
