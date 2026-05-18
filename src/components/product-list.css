@@ -1,106 +1,56 @@
 @layer components {
-  .product-list-collection-collection {
-    grid-column: 1 / -1;
-    width: min(100%, var(--product-list-collection-width, 980px));
-    margin-inline: auto;
-    padding: var(--product-list-collection-padding-top, 48px) 24px var(--product-list-collection-padding-bottom, 72px);
-  }
-
-  .product-list-collection-collection__header {
+  .section-resource-list--meditations .section-resource-list__header {
+    justify-content: center;
     text-align: center;
-    margin-bottom: var(--product-list-collection-header-gap, 92px);
   }
 
-  .product-list-collection-collection__header h1 {
-    margin: 0 0 24px;
-    font-family: var(--font-heading--family);
-    font-size: clamp(42px, 5vw, var(--product-list-collection-heading-size, 56px));
-    font-weight: 400;
-    line-height: 1.1;
-    color: var(--product-list-collection-text-color, #403936);
+  .section-resource-list--meditations .section-resource-list__header h2,
+  .section-resource-list--meditations .section-resource-list__header h3 {
+    text-align: center;
+    margin-inline: auto;
   }
 
-  .product-list-collection-collection__header p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.65;
-    color: var(--product-list-collection-muted-color, #6d6460);
-    white-space: pre-line;
+  .section-resource-list--meditations .resource-list--grid {
+    max-width: 1120px;
+    margin-inline: auto;
   }
 
-  .product-list-collection-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border-top: 1px solid var(--product-list-collection-border-color, #dfcfc8);
+  .section-resource-list--meditations .resource-list__item {
+    background: rgb(var(--color-background-rgb) / 1);
   }
 
-  .product-list-collection-list__item {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(180px, 260px) auto;
+  .section-resource-list--meditations .product-card,
+  .section-resource-list--meditations .product-grid__card {
+    background: var(--color-background);
+    text-align: center;
+  }
+
+  .section-resource-list--meditations .product-card .group-block-content,
+  .section-resource-list--meditations .product-grid__card .group-block-content {
     align-items: center;
-    gap: 48px;
-    padding: 38px 0 32px;
-    border-bottom: 1px solid var(--product-list-collection-border-color, #dfcfc8);
+    text-align: center;
   }
 
-  .product-list-collection-list__title {
-    font-family: var(--font-heading--family);
-    font-size: var(--product-list-collection-title-size, 26px);
-    color: var(--product-list-collection-text-color, #403936);
-    text-decoration: none;
+  .section-resource-list--meditations .product-card h3,
+  .section-resource-list--meditations .product-card h4,
+  .section-resource-list--meditations .product-card .text-block {
+    text-align: center;
   }
 
-  .product-list-collection-list__meta {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    min-width: 180px;
-    font-size: 15px;
-    line-height: 1.45;
-    color: var(--product-list-collection-text-color, #403936);
+  .section-resource-list--meditations .card-gallery,
+  .section-resource-list--meditations .product-card__image,
+  .section-resource-list--meditations .product-media-container {
+    aspect-ratio: 1 / 0.78;
+    overflow: hidden;
   }
 
-  .product-list-collection-list__price {
-    margin-top: 4px;
-    font-size: 17px;
+  .section-resource-list--meditations img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
-  .product-list-collection-list__form {
-    justify-self: end;
-    margin: 0;
-  }
-
-  .product-list-collection-list__button {
-    min-width: 128px;
-    min-height: 54px;
-    padding: 16px 24px;
-    border: 0;
-    border-radius: 0;
-    background: var(--product-list-collection-button-bg, #453d39);
-    color: var(--product-list-collection-button-color, #ffffff);
-    font-family: var(--font-heading--family);
-    font-size: 17px;
-  }
-
-  .product-list-collection-list__button:hover {
-    background: var(--product-list-collection-button-bg, #453d39);
-    color: var(--product-list-collection-button-color, #ffffff);
-  }
-
-  @media screen and (max-width: 749px) {
-    .product-list-collection-list__item {
-      grid-template-columns: 1fr;
-      gap: 16px;
-      padding: 30px 0;
-    }
-
-    .product-list-collection-list__meta {
-      min-width: 0;
-    }
-
-    .product-list-collection-list__form {
-      justify-self: start;
-    }
+  .section-resource-list--meditations .button-base {
+    margin-inline: auto;
   }
 }
