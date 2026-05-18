@@ -1095,7 +1095,7 @@
               "static": true,
               "settings": {
                 "label": "Verstuur bericht",
-                "style_class": "button-secondary",
+                "style_class": "button-tertiary",
                 "width": "fit-content",
                 "custom_width": 100,
                 "width_mobile": "fit-content",
