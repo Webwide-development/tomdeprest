@@ -4,7 +4,7 @@
         @apply max-w-(--normal-page-width) mx-auto!;
 
         /* First child min-height fallback */
-        & > div {
+        & > div[class="@container/main"] {
             @apply min-h-screen;
             @apply flex flex-col;            
         }
