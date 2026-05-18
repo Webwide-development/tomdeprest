@@ -514,7 +514,7 @@
           "settings": {
             "width": "custom",
             "custom_width": 75,
-            "width_mobile": "fit-content",
+            "width_mobile": "custom",
             "custom_width_mobile": 100,
             "inherit_color_scheme": true,
             "color_scheme": "",
@@ -529,7 +529,7 @@
               "static": true,
               "settings": {
                 "label": "Verstuur bericht",
-                "style_class": "button-secondary",
+                "style_class": "button-tertiary",
                 "width": "fit-content",
                 "custom_width": 100,
                 "width_mobile": "fit-content",
