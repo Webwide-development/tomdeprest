@@ -1,0 +1,153 @@
+@layer components {
+  .product-list-collection-collection {
+    grid-column: 1 / -1;
+    width: min(100%, var(--product-list-collection-width, 980px));
+    margin-inline: auto;
+    padding: var(--product-list-collection-padding-top, 48px) 24px var(--product-list-collection-padding-bottom, 72px);
+  }
+
+  .product-list-collection-collection__header {
+    text-align: center;
+    margin-bottom: var(--product-list-collection-header-gap, 92px);
+  }
+
+  .product-list-collection-collection__header h1 {
+    margin: 0 0 24px;
+    font-family: var(--font-heading--family);
+    font-size: clamp(38px, 5vw, var(--product-list-collection-heading-size, 56px));
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--product-list-collection-text-color, #403936);
+  }
+
+  .product-list-collection-collection__header p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--product-list-collection-muted-color, #6d6460);
+    white-space: pre-line;
+  }
+
+  .product-list-collection-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--product-list-collection-border-color, #dfcfc8);
+  }
+
+  .product-list-collection-list__item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(100px, 180px) auto;
+    align-items: center;
+    gap: clamp(24px, 5vw, 48px);
+    padding: 38px 0 32px;
+    border-bottom: 1px solid var(--product-list-collection-border-color, #dfcfc8);
+  }
+
+  .product-list-collection-list__title {
+    min-width: 0;
+    font-family: var(--font-heading--family);
+    font-size: clamp(24px, 3vw, var(--product-list-collection-title-size, 26px));
+    line-height: 1.25;
+    color: var(--product-list-collection-text-color, #403936);
+    text-decoration: none;
+  }
+
+  .product-list-collection-list__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 100px;
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--product-list-collection-text-color, #403936);
+  }
+
+  .product-list-collection-list__price {
+    margin-top: 4px;
+    font-size: 17px;
+  }
+
+  .product-list-collection-list__form {
+    justify-self: end;
+    margin: 0;
+  }
+
+  .product-list-collection-list__button {
+    min-width: 128px;
+    min-height: 54px;
+    padding: 16px 24px;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    background: var(--product-list-collection-button-bg, #453d39);
+    color: var(--product-list-collection-button-color, #ffffff);
+    font-family: var(--font-heading--family);
+    font-size: 17px;
+    transition: opacity 0.2s ease;
+  }
+
+  .product-list-collection-list__button:hover {
+    opacity: 0.85;
+    background: var(--product-list-collection-button-bg, #453d39);
+    color: var(--product-list-collection-button-color, #ffffff);
+  }
+
+  .product-list-collection-list__button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+
+  @media screen and (max-width: 920px) {
+    .product-list-collection-collection {
+      padding-inline: 20px;
+    }
+
+    .product-list-collection-list__item {
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        "title title"
+        "meta button";
+      gap: 16px 20px;
+      padding: 30px 0;
+    }
+
+    .product-list-collection-list__title {
+      grid-area: title;
+      font-size: clamp(25px, 8vw, 34px);
+    }
+
+    .product-list-collection-list__meta {
+      grid-area: meta;
+      min-width: 0;
+      align-self: center;
+    }
+
+    .product-list-collection-list__form {
+      grid-area: button;
+      justify-self: end;
+      align-self: center;
+    }
+
+    .product-list-collection-list__button {
+      min-width: 142px;
+      min-height: 52px;
+      padding: 14px 20px;
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    .product-list-collection-list__item {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "title"
+        "meta"
+        "button";
+    }
+
+    .product-list-collection-list__form {
+      justify-self: start;
+    }
+  }
+}
