@@ -274,7 +274,7 @@
             "text_44DJxc": {
               "type": "text",
               "settings": {
-                "text": "<p>Wil je meer weten over emotional release en hoe ik daarbij werk? Op Groepspraktijk NU vind je meer info over mijn begeleiding binnen de praktijk. Of stuur me gerust een mail, info@groepspraktijk-nu.be</p>",
+                "text": "<p>Wil je meer weten over emotional release en hoe ik daarbij werk? Op <a href=\"https://groepspraktijk-nu.be/\" target=\"_blank\" title=\"https://groepspraktijk-nu.be/\"><span style=\"text-decoration:underline\">Groepspraktijk NU</span></a> vind je meer info over mijn begeleiding binnen de praktijk. Of stuur me gerust een mail, <a href=\"mailto:info@groepspraktijk-nu.be?subject=Info%20gevraagd\" title=\"mailto:info@groepspraktijk-nu.be?subject=Info%20gevraagd\"><span style=\"text-decoration:underline\">info@groepspraktijk-nu.be</span></a></p>",
                 "width": "fit-content",
                 "max_width": "narrow",
                 "alignment": "left",
