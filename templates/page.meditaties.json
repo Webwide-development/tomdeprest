@@ -61,9 +61,23 @@
       "name": "Meditaties",
       "settings": {
         "title": "Mijn meditaties",
+        "intro": "Hier vind je alle meditaties die je hebt aangekocht.",
         "empty_text": "Je hebt momenteel nog geen meditaties aangekocht.",
         "empty_button_url": "",
-        "empty_button_label": "Bekijk meditaties"
+        "empty_button_label": "Bekijk meditaties",
+        "no_products_text": "Er zijn momenteel geen meditaties beschikbaar.",
+        "login_title": "Log in om je meditaties te bekijken",
+        "login_text": "Je meditaties zijn gekoppeld aan je klantaccount.",
+        "login_button_label": "Inloggen",
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "gap": 2,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "padding-block-start": 72,
+        "padding-block-end": 96
       }
     },
     "section_zBKtii": {
