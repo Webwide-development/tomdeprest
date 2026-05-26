@@ -185,14 +185,6 @@
   <div class="meditations">
     <div class="meditations__inner">
       {% if customer %}
-        <div class="meditations__intro">
-          <h1>{{ section.settings.title }}</h1>
-
-          {% if section.settings.intro != blank %}
-            <p>{{ section.settings.intro }}</p>
-          {% endif %}
-        </div>
-
         {% if meditation_collection and meditation_collection.products_count > 0 %}
           <div class="meditations__grid">
             {% for product in meditation_collection.products %}
