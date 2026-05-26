@@ -38,9 +38,9 @@
 
 {% else %}
 
-  <script>
-    window.location.href = "/account/login?return_url={{ request.path }}";
-  </script>
+  {% comment %} <script> {% endcomment %}
+    {% comment %} window.location.href = "/account/login?return_url={{ request.path }}"; {% endcomment %}
+  {% comment %} </script> {% endcomment %}
 
 {% endif %}
 
