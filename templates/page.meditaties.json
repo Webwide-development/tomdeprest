@@ -61,7 +61,7 @@
       "name": "Meditaties",
       "settings": {
         "collection": "meditaties",
-        "title": "Mijn meditaties",
+        "title": "",
         "intro": "Hier vind je alle meditaties die je hebt aangekocht.",
         "empty_text": "Je hebt momenteel nog geen meditaties aangekocht.",
         "empty_button_url": "",
