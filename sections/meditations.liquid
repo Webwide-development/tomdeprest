@@ -218,7 +218,7 @@
               <p>{{ section.settings.empty_text }}</p>
 
               {% if section.settings.empty_button_url != blank %}
-                <a href="{{ section.settings.empty_button_url }}" class="button-base button-primary">
+                <a href="{{ section.settings.empty_button_url }}" class="button-base button-secondary">
                   {{ section.settings.empty_button_label }}
                 </a>
               {% endif %}
@@ -236,7 +236,7 @@
 
           <a
             href="{{ routes.account_login_url }}?return_url={{ request.path }}"
-            class="button-base button-primary"
+            class="button-base button-secondary"
           >
             {{ section.settings.login_button_label }}
           </a>
