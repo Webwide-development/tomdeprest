@@ -8,41 +8,30 @@
     margin: 0 auto;
   }
 
-  #shopify-section-{{ section.id }} .meditations__intro {
-    margin-bottom: 48px;
-    text-align: center;
-  }
-
-  #shopify-section-{{ section.id }} .meditations__intro h1 {
-    margin: 0 0 14px;
-    font-family: var(--font-heading-family);
-    font-size: clamp(34px, 4vw, 48px);
-    font-weight: 400;
-    line-height: 1.1;
-  }
-
-  #shopify-section-{{ section.id }} .meditations__intro p {
-    max-width: 480px;
-    margin: 0 auto;
-    color: rgba(var(--color-foreground), 0.65);
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
   #shopify-section-{{ section.id }} .meditations__grid {
     display: grid;
-    gap: 42px;
+    gap: 18px;
   }
 
   #shopify-section-{{ section.id }} .meditations__card {
-    padding-bottom: 42px;
-    border-bottom: 1px solid rgba(var(--color-foreground), 0.18);
+    padding: 0 0 24px;
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.16);
+  }
+
+  #shopify-section-{{ section.id }} .meditations__card:last-child {
+    border-bottom: 0;
+  }
+
+  #shopify-section-{{ section.id }} .meditations__card-header {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 28px;
+    align-items: center;
   }
 
   #shopify-section-{{ section.id }} .meditations__image-wrapper {
-    margin-bottom: 22px;
     overflow: hidden;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 3;
     background: rgba(var(--color-foreground), 0.04);
   }
 
@@ -54,16 +43,16 @@
   }
 
   #shopify-section-{{ section.id }} .meditations__content h2 {
-    margin: 0 0 8px;
+    margin: 0 0 10px;
     font-family: var(--font-heading-family);
-    font-size: clamp(26px, 3vw, 38px);
+    font-size: clamp(24px, 2.8vw, 34px);
     font-weight: 400;
     line-height: 1.1;
   }
 
   #shopify-section-{{ section.id }} .meditations__description {
-    max-width: 620px;
-    margin-bottom: 22px;
+    max-width: 520px;
+    margin-bottom: 18px;
     color: rgba(var(--color-foreground), 0.66);
     font-size: 14px;
     line-height: 1.7;
@@ -73,7 +62,18 @@
     margin: 0;
   }
 
+  #shopify-section-{{ section.id }} .meditations__notice,
+  #shopify-section-{{ section.id }} .meditations__empty p,
+  #shopify-section-{{ section.id }} .meditations__login-required p,
+  #shopify-section-{{ section.id }} .meditations__no-products {
+    margin: 0;
+    color: rgba(var(--color-foreground), 0.66);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
   #shopify-section-{{ section.id }} .meditations__video-wrapper {
+    margin-top: 24px;
     overflow: hidden;
     aspect-ratio: 16 / 9;
     background: #111;
@@ -96,65 +96,33 @@
     background: rgba(var(--color-foreground), 0.025);
   }
 
+  #shopify-section-{{ section.id }} .meditations__login-required h2 {
+    margin: 0 0 12px;
+    font-family: var(--font-heading-family);
+    font-size: clamp(26px, 3vw, 38px);
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  #shopify-section-{{ section.id }} .meditations__empty .button-base,
+  #shopify-section-{{ section.id }} .meditations__login-required .button-base {
+    margin-top: 22px;
+  }
+
   @media screen and (max-width: 749px) {
     #shopify-section-{{ section.id }} .meditations__inner {
       max-width: 100%;
     }
 
-    #shopify-section-{{ section.id }} .meditations__intro {
-      margin-bottom: 36px;
+    #shopify-section-{{ section.id }} .meditations__card-header {
+      grid-template-columns: 1fr;
+      gap: 18px;
     }
 
-    #shopify-section-{{ section.id }} .meditations__grid {
-      gap: 34px;
-    }
-
-    #shopify-section-{{ section.id }} .meditations__card {
-      padding-bottom: 34px;
+    #shopify-section-{{ section.id }} .meditations__image-wrapper {
+      aspect-ratio: 16 / 9;
     }
   }
-
-  #shopify-section-{{ section.id }} .meditations__grid {
-    display: grid;
-    gap: 18px;
-    }
-
-    #shopify-section-{{ section.id }} .meditations__card {
-    padding: 0 0 24px;
-    border-bottom: 1px solid rgba(var(--color-foreground), 0.16);
-    }
-
-    #shopify-section-{{ section.id }} .meditations__card-header {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 28px;
-    align-items: center;
-    }
-
-    #shopify-section-{{ section.id }} .meditations__image-wrapper {
-    margin: 0;
-    aspect-ratio: 4 / 3;
-    }
-
-    #shopify-section-{{ section.id }} .meditations__content h2 {
-    margin-bottom: 8px;
-    font-size: clamp(24px, 2.8vw, 34px);
-    }
-
-    #shopify-section-{{ section.id }} .meditations__video-wrapper {
-    margin-top: 24px;
-    }
-
-    @media screen and (max-width: 749px) {
-    #shopify-section-{{ section.id }} .meditations__card-header {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    #shopify-section-{{ section.id }} .meditations__image-wrapper {
-        aspect-ratio: 16 / 9;
-    }
-    }
 </style>
 
 {% capture children %}
@@ -182,52 +150,54 @@
 
               {% if has_access %}
                 <article class="meditations__card">
-                <div class="meditations__card-header">
+                  <div class="meditations__card-header">
                     {% if product.featured_image != blank %}
-                    <div class="meditations__image-wrapper">
+                      <div class="meditations__image-wrapper">
                         <img
-                        src="{{ product.featured_image | image_url: width: 600 }}"
-                        alt="{{ product.featured_image.alt | default: product.title | escape }}"
-                        loading="lazy"
-                        width="600"
-                        height="338"
+                          src="{{ product.featured_image | image_url: width: 600 }}"
+                          alt="{{ product.featured_image.alt | default: product.title | escape }}"
+                          loading="lazy"
+                          width="600"
+                          height="338"
                         >
-                    </div>
+                      </div>
                     {% endif %}
 
                     <div class="meditations__content">
-                    <h2>{{ product.title }}</h2>
+                      <h2>{{ product.title }}</h2>
 
-                    {% if product.description != blank %}
+                      {% if product.description != blank %}
                         <div class="meditations__description">
-                        {{ product.description }}
+                          {{ product.description }}
                         </div>
-                    {% endif %}
+                      {% endif %}
 
-                    {% if vimeo_id != blank %}
+                      {% if vimeo_id != blank %}
                         <button
-                        type="button"
-                        class="button-base button-primary meditations__toggle"
-                        aria-expanded="false"
-                        aria-controls="meditation-video-{{ product.id }}"
+                          type="button"
+                          class="button-base button-primary meditations__toggle"
+                          aria-expanded="false"
+                          aria-controls="meditation-video-{{ product.id }}"
+                          data-open-label="{{ section.settings.open_button_label | escape }}"
+                          data-close-label="{{ section.settings.close_button_label | escape }}"
                         >
-                        Beluister meditatie
+                          {{ section.settings.open_button_label }}
                         </button>
-                    {% else %}
+                      {% else %}
                         <p class="meditations__notice">
-                        Deze meditatie is nog niet gekoppeld aan een video.
+                          {{ section.settings.missing_video_text }}
                         </p>
-                    {% endif %}
+                      {% endif %}
                     </div>
-                </div>
+                  </div>
 
-                {% if vimeo_id != blank %}
+                  {% if vimeo_id != blank %}
                     <div
-                    id="meditation-video-{{ product.id }}"
-                    class="meditations__video-wrapper"
-                    hidden
+                      id="meditation-video-{{ product.id }}"
+                      class="meditations__video-wrapper"
+                      hidden
                     >
-                    <iframe
+                      <iframe
                         data-src="https://player.vimeo.com/video/{{ vimeo_id }}"
                         width="100%"
                         height="500"
@@ -235,9 +205,9 @@
                         allow="autoplay; fullscreen; picture-in-picture"
                         allowfullscreen
                         loading="lazy">
-                    </iframe>
+                      </iframe>
                     </div>
-                {% endif %}
+                  {% endif %}
                 </article>
               {% endif %}
             {% endfor %}
@@ -255,11 +225,13 @@
             </div>
           {% endunless %}
         {% else %}
-          <p>{{ section.settings.no_products_text }}</p>
+          <p class="meditations__no-products">
+            {{ section.settings.no_products_text }}
+          </p>
         {% endif %}
       {% else %}
         <div class="meditations__login-required">
-          <h1>{{ section.settings.login_title }}</h1>
+          <h2>{{ section.settings.login_title }}</h2>
           <p>{{ section.settings.login_text }}</p>
 
           <a
@@ -278,7 +250,7 @@
 
 <script>
   document.addEventListener('click', function(event) {
-    const button = event.target.closest('.meditations__toggle');
+    const button = event.target.closest('#shopify-section-{{ section.id }} .meditations__toggle');
 
     if (!button) return;
 
@@ -286,6 +258,8 @@
     const target = document.getElementById(targetId);
     const iframe = target ? target.querySelector('iframe') : null;
     const isOpen = button.getAttribute('aria-expanded') === 'true';
+    const openLabel = button.dataset.openLabel || 'Beluister meditatie';
+    const closeLabel = button.dataset.closeLabel || 'Sluit meditatie';
 
     if (!target) return;
 
@@ -296,7 +270,7 @@
       iframe.src = iframe.dataset.src;
     }
 
-    button.textContent = isOpen ? 'Beluister meditatie' : 'Sluit meditatie';
+    button.textContent = isOpen ? openLabel : closeLabel;
   });
 </script>
 
@@ -309,13 +283,31 @@
   },
   "settings": [
     {
-        "type": "header",
-        "content": "Content"
+      "type": "header",
+      "content": "Content"
     },
     {
-        "type": "collection",
-        "id": "collection",
-        "label": "Meditatie collectie"
+      "type": "collection",
+      "id": "collection",
+      "label": "Meditatie collectie"
+    },
+    {
+      "type": "text",
+      "id": "open_button_label",
+      "label": "Knoptekst openen",
+      "default": "Beluister meditatie"
+    },
+    {
+      "type": "text",
+      "id": "close_button_label",
+      "label": "Knoptekst sluiten",
+      "default": "Sluit meditatie"
+    },
+    {
+      "type": "text",
+      "id": "missing_video_text",
+      "label": "Tekst ontbrekende video",
+      "default": "Deze meditatie is nog niet gekoppeld aan een video."
     },
     {
       "type": "text",
@@ -362,7 +354,6 @@
       "label": "Login knoptekst",
       "default": "Inloggen"
     },
-
     {
       "type": "header",
       "content": "t:content.layout"
