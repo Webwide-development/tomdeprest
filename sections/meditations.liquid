@@ -1,53 +1,98 @@
+{% liquid
+  assign meditation_collection = collections['meditaties']
+  assign has_access_to_any_meditation = false
+%}
+
 {% if customer %}
 
   <section class="meditations-page">
     <h1>{{ section.settings.title }}</h1>
 
-    {% assign has_any_meditation = false %}
+    {% if meditation_collection != blank and meditation_collection.products_count > 0 %}
 
-    {% for block in section.blocks %}
-      {% if block.type == 'meditation' and customer.tags contains block.settings.customer_tag %}
-        {% assign has_any_meditation = true %}
+      <div class="meditations-grid">
+        {% for product in meditation_collection.products %}
+          {% liquid
+            assign vimeo_id = product.metafields.custom.vimeo_id.value
+            assign required_tag = product.metafields.custom.customer_tag.value
+            assign has_access = false
 
-        <div class="meditation-item" {{ block.shopify_attributes }}>
-          <h2>{{ block.settings.title }}</h2>
+            if required_tag != blank and customer.tags contains required_tag
+              assign has_access = true
+              assign has_access_to_any_meditation = true
+            endif
+          %}
 
-          <iframe
-            src="https://player.vimeo.com/video/{{ block.settings.vimeo_id }}"
-            width="100%"
-            height="500"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
-            loading="lazy">
-          </iframe>
-        </div>
-      {% endif %}
-    {% endfor %}
+          {% if has_access %}
+            <article class="meditation-card">
+              {% if product.featured_image %}
+                <img
+                  src="{{ product.featured_image | image_url: width: 800 }}"
+                  alt="{{ product.featured_image.alt | escape }}"
+                  loading="lazy"
+                  width="800"
+                  height="450">
+              {% endif %}
 
-    {% unless has_any_meditation %}
-      <p>{{ section.settings.empty_text }}</p>
+              <h2>{{ product.title }}</h2>
 
-      {% if section.settings.empty_button_url != blank %}
-        <a href="{{ section.settings.empty_button_url }}">
-          {{ section.settings.empty_button_label }}
-        </a>
-      {% endif %}
-    {% endunless %}
+              {% if product.description != blank %}
+                <div class="meditation-description">
+                  {{ product.description }}
+                </div>
+              {% endif %}
+
+              {% if vimeo_id != blank %}
+                <div class="meditation-video-wrapper">
+                  <iframe
+                    src="https://player.vimeo.com/video/{{ vimeo_id }}"
+                    width="100%"
+                    height="500"
+                    frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy">
+                  </iframe>
+                </div>
+              {% else %}
+                <p>Deze meditatie is nog niet gekoppeld aan een video.</p>
+              {% endif %}
+            </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      {% unless has_access_to_any_meditation %}
+        <p>{{ section.settings.empty_text }}</p>
+
+        {% if section.settings.empty_button_url != blank %}
+          <a href="{{ section.settings.empty_button_url }}">
+            {{ section.settings.empty_button_label }}
+          </a>
+        {% endif %}
+      {% endunless %}
+
+    {% else %}
+      <p>Er zijn momenteel geen meditaties beschikbaar.</p>
+    {% endif %}
   </section>
 
 {% else %}
 
-  {% comment %} <script> {% endcomment %}
-    {% comment %} window.location.href = "/account/login?return_url={{ request.path }}"; {% endcomment %}
-  {% comment %} </script> {% endcomment %}
+  <script>
+    window.location.href = "{{ routes.account_login_url }}?return_url={{ request.path }}";
+  </script>
+
+  <noscript>
+    <p>Log in om je meditaties te bekijken.</p>
+    <a href="{{ routes.account_login_url }}">Inloggen</a>
+  </noscript>
 
 {% endif %}
 
-
 {% schema %}
 {
-  "name": "Meditations",
+  "name": "Meditaties",
   "tag": "section",
   "class": "section-meditations",
   "settings": [
@@ -60,55 +105,24 @@
     {
       "type": "text",
       "id": "empty_text",
-      "label": "Tekst zonder toegang",
+      "label": "Tekst zonder aangekochte meditaties",
       "default": "Je hebt momenteel nog geen meditaties aangekocht."
     },
     {
       "type": "url",
       "id": "empty_button_url",
-      "label": "Knoplink zonder toegang"
+      "label": "Knoplink"
     },
     {
       "type": "text",
       "id": "empty_button_label",
-      "label": "Knoptekst zonder toegang",
+      "label": "Knoptekst",
       "default": "Bekijk meditaties"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "meditation",
-      "name": "Meditatie",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Titel",
-          "default": "Diepe slaap meditatie"
-        },
-        {
-          "type": "text",
-          "id": "customer_tag",
-          "label": "Customer tag",
-          "default": "meditatie-slaap"
-        },
-        {
-          "type": "text",
-          "id": "vimeo_id",
-          "label": "Vimeo video ID",
-          "default": "123456789"
-        }
-      ]
     }
   ],
   "presets": [
     {
-      "name": "Meditations",
-      "blocks": [
-        {
-          "type": "meditation"
-        }
-      ]
+      "name": "Meditaties"
     }
   ]
 }
