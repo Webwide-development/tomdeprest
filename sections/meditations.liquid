@@ -250,28 +250,34 @@
 {% render 'section', section: section, children: children %}
 
 <script>
-  document.addEventListener('click', function(event) {
-    const button = event.target.closest('#shopify-section-{{ section.id }} .meditations__toggle');
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.getElementById('shopify-section-{{ section.id }}');
 
-    if (!button) return;
+    if (!section) return;
 
-    const targetId = button.getAttribute('aria-controls');
-    const target = document.getElementById(targetId);
-    const iframe = target ? target.querySelector('iframe') : null;
-    const isOpen = button.getAttribute('aria-expanded') === 'true';
-    const openLabel = button.dataset.openLabel || 'Beluister meditatie';
-    const closeLabel = button.dataset.closeLabel || 'Sluit meditatie';
+    section.addEventListener('click', function(event) {
+      const button = event.target.closest('.meditations__toggle');
 
-    if (!target) return;
+      if (!button) return;
 
-    button.setAttribute('aria-expanded', String(!isOpen));
-    target.hidden = isOpen;
+      const targetId = button.getAttribute('aria-controls');
+      const target = document.getElementById(targetId);
+      const iframe = target ? target.querySelector('iframe') : null;
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+      const openLabel = button.dataset.openLabel || 'Beluister meditatie';
+      const closeLabel = button.dataset.closeLabel || 'Sluit meditatie';
 
-    if (!isOpen && iframe && !iframe.src) {
-      iframe.src = iframe.dataset.src;
-    }
+      if (!target) return;
 
-    button.textContent = isOpen ? openLabel : closeLabel;
+      button.setAttribute('aria-expanded', String(!isOpen));
+      target.hidden = isOpen;
+
+      if (!isOpen && iframe && !iframe.src) {
+        iframe.src = iframe.dataset.src;
+      }
+
+      button.textContent = isOpen ? openLabel : closeLabel;
+    });
   });
 </script>
 
