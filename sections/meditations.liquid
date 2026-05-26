@@ -175,14 +175,15 @@
 
                       {% if vimeo_id != blank %}
                         <button
-                          type="button"
-                          class="button-base button-secondary meditations__toggle"
-                          aria-expanded="false"
-                          aria-controls="meditation-video-{{ product.id }}"
-                          data-open-label="{{ section.settings.open_button_label | escape }}"
-                          data-close-label="{{ section.settings.close_button_label | escape }}"
+                            type="button"
+                            class="button-base button-secondary meditations__toggle"
+                            aria-expanded="false"
+                            aria-controls="meditation-video-{{ product.id }}"
+                            aria-label="{{ section.settings.open_button_label | escape }}: {{ product.title | escape }}"
+                            data-open-label="{{ section.settings.open_button_label | escape }}"
+                            data-close-label="{{ section.settings.close_button_label | escape }}"
                         >
-                          {{ section.settings.open_button_label }}
+                            {{ section.settings.open_button_label }}
                         </button>
                       {% else %}
                         <p class="meditations__notice">
