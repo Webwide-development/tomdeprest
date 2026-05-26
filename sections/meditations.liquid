@@ -1,26 +1,47 @@
+{% liquid
+  assign has_sleep_meditation = false
+
+  if customer and customer.tags contains 'meditatie-slaap'
+    assign has_sleep_meditation = true
+  endif
+%}
+
 {% if customer %}
 
+  <section class="meditations-page">
     <h1>Mijn meditaties</h1>
 
-    {% if customer.tags contains 'meditatie-slaap' %}
-        <div class="meditation-item">
-            <h2>Diepe slaap meditatie</h2>
+    {% if has_sleep_meditation %}
+      <div class="meditation-item">
+        <h2>Diepe slaap meditatie</h2>
 
-            <iframe 
-                src="https://player.vimeo.com/video/123456789"
-                width="100%"
-                height="500"
-                frameborder="0"
-                allow="autoplay; fullscreen"
-                allowfullscreen>
-            </iframe>
+        <div class="meditation-video-wrapper">
+          <iframe
+            src="https://player.vimeo.com/video/123456789"
+            width="100%"
+            height="500"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
         </div>
+      </div>
+    {% else %}
+      <p>Je hebt momenteel nog geen meditaties aangekocht.</p>
+      <a href="/collections/meditaties">Bekijk meditaties</a>
     {% endif %}
+  </section>
 
 {% else %}
 
-    <script>
-        window.location.href = "/account/login";
-    </script>
+  <script>
+    window.location.href = "/account/login?return_url=/pages/mijn-meditaties";
+  </script>
+
+  <noscript>
+    <p>Log in om je meditaties te bekijken.</p>
+    <a href="/account/login">Inloggen</a>
+  </noscript>
 
 {% endif %}
