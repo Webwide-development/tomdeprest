@@ -1,106 +1,136 @@
-{% liquid
-  assign meditation_collection = collections['meditaties']
-  assign has_access_to_any_meditation = false
-%}
+{% capture children %}
+  {% liquid
+    assign meditation_collection = collections['meditaties']
+    assign has_access_to_any_meditation = false
+  %}
 
-{% if customer %}
+  <div class="meditations">
+    <div class="meditations__inner">
+      {% if customer %}
+        <div class="meditations__intro">
+          <h1>{{ section.settings.title }}</h1>
 
-  <section class="meditations-page">
-    <h1>{{ section.settings.title }}</h1>
-
-    {% if meditation_collection != blank and meditation_collection.products_count > 0 %}
-
-      <div class="meditations-grid">
-        {% for product in meditation_collection.products %}
-          {% liquid
-            assign vimeo_id = product.metafields.custom.vimeo_id.value
-            assign required_tag = product.metafields.custom.customer_tag.value
-            assign has_access = false
-
-            if required_tag != blank and customer.tags contains required_tag
-              assign has_access = true
-              assign has_access_to_any_meditation = true
-            endif
-          %}
-
-          {% if has_access %}
-            <article class="meditation-card">
-              {% if product.featured_image %}
-                <img
-                  src="{{ product.featured_image | image_url: width: 800 }}"
-                  alt="{{ product.featured_image.alt | escape }}"
-                  loading="lazy"
-                  width="800"
-                  height="450">
-              {% endif %}
-
-              <h2>{{ product.title }}</h2>
-
-              {% if product.description != blank %}
-                <div class="meditation-description">
-                  {{ product.description }}
-                </div>
-              {% endif %}
-
-              {% if vimeo_id != blank %}
-                <div class="meditation-video-wrapper">
-                  <iframe
-                    src="https://player.vimeo.com/video/{{ vimeo_id }}"
-                    width="100%"
-                    height="500"
-                    frameborder="0"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowfullscreen
-                    loading="lazy">
-                  </iframe>
-                </div>
-              {% else %}
-                <p>Deze meditatie is nog niet gekoppeld aan een video.</p>
-              {% endif %}
-            </article>
+          {% if section.settings.intro != blank %}
+            <p>{{ section.settings.intro }}</p>
           {% endif %}
-        {% endfor %}
-      </div>
+        </div>
 
-      {% unless has_access_to_any_meditation %}
-        <p>{{ section.settings.empty_text }}</p>
+        {% if meditation_collection != blank and meditation_collection.products_count > 0 %}
+          <div class="meditations__grid">
+            {% for product in meditation_collection.products %}
+              {% liquid
+                assign vimeo_id = product.metafields.custom.vimeo_id.value
+                assign required_tag = product.metafields.custom.customer_tag.value
+                assign has_access = false
 
-        {% if section.settings.empty_button_url != blank %}
-          <a href="{{ section.settings.empty_button_url }}">
-            {{ section.settings.empty_button_label }}
-          </a>
+                if required_tag != blank and customer.tags contains required_tag
+                  assign has_access = true
+                  assign has_access_to_any_meditation = true
+                endif
+              %}
+
+              {% if has_access %}
+                <article class="meditations__card">
+                  {% if product.featured_image != blank %}
+                    <div class="meditations__image-wrapper">
+                      <img
+                        src="{{ product.featured_image | image_url: width: 900 }}"
+                        alt="{{ product.featured_image.alt | default: product.title | escape }}"
+                        loading="lazy"
+                        width="900"
+                        height="506"
+                      >
+                    </div>
+                  {% endif %}
+
+                  <div class="meditations__content">
+                    <h2>{{ product.title }}</h2>
+
+                    {% if product.description != blank %}
+                      <div class="meditations__description">
+                        {{ product.description }}
+                      </div>
+                    {% endif %}
+
+                    {% if vimeo_id != blank %}
+                      <div class="meditations__video-wrapper">
+                        <iframe
+                          src="https://player.vimeo.com/video/{{ vimeo_id }}"
+                          width="100%"
+                          height="500"
+                          frameborder="0"
+                          allow="autoplay; fullscreen; picture-in-picture"
+                          allowfullscreen
+                          loading="lazy">
+                        </iframe>
+                      </div>
+                    {% else %}
+                      <p class="meditations__notice">
+                        Deze meditatie is nog niet gekoppeld aan een video.
+                      </p>
+                    {% endif %}
+                  </div>
+                </article>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          {% unless has_access_to_any_meditation %}
+            <div class="meditations__empty">
+              <p>{{ section.settings.empty_text }}</p>
+
+              {% if section.settings.empty_button_url != blank %}
+                <a href="{{ section.settings.empty_button_url }}" class="meditations__button">
+                  {{ section.settings.empty_button_label }}
+                </a>
+              {% endif %}
+            </div>
+          {% endunless %}
+        {% else %}
+          <p>{{ section.settings.no_products_text }}</p>
         {% endif %}
-      {% endunless %}
+      {% else %}
+        <div class="meditations__login-required">
+          <h1>{{ section.settings.login_title }}</h1>
+          <p>{{ section.settings.login_text }}</p>
 
-    {% else %}
-      <p>Er zijn momenteel geen meditaties beschikbaar.</p>
-    {% endif %}
-  </section>
+          <a
+            href="{{ routes.account_login_url }}?return_url={{ request.path }}"
+            class="meditations__button"
+          >
+            {{ section.settings.login_button_label }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endcapture %}
 
-{% else %}
-
-  {% comment %} <script>
-    window.location.href = "{{ routes.account_login_url }}?return_url={{ request.path }}";
-  </script> {% endcomment %}
-
-  <noscript>
-    <p>Log in om je meditaties te bekijken.</p>
-    <a href="{{ routes.account_login_url }}">Inloggen</a>
-  </noscript>
-
-{% endif %}
+{% render 'section', section: section, children: children %}
 
 {% schema %}
 {
   "name": "Meditaties",
-  "tag": "section",
-  "class": "section-meditations",
+  "class": "section-wrapper",
+  "disabled_on": {
+    "groups": ["header"]
+  },
   "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
     {
       "type": "text",
       "id": "title",
       "label": "Titel",
       "default": "Mijn meditaties"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Intro",
+      "default": "Hier vind je alle meditaties die je hebt aangekocht."
     },
     {
       "type": "text",
@@ -111,18 +141,151 @@
     {
       "type": "url",
       "id": "empty_button_url",
-      "label": "Knoplink"
+      "label": "Knoplink zonder aangekochte meditaties"
     },
     {
       "type": "text",
       "id": "empty_button_label",
-      "label": "Knoptekst",
+      "label": "Knoptekst zonder aangekochte meditaties",
       "default": "Bekijk meditaties"
+    },
+    {
+      "type": "text",
+      "id": "no_products_text",
+      "label": "Tekst zonder producten in collectie",
+      "default": "Er zijn momenteel geen meditaties beschikbaar."
+    },
+    {
+      "type": "header",
+      "content": "Login"
+    },
+    {
+      "type": "text",
+      "id": "login_title",
+      "label": "Login titel",
+      "default": "Log in om je meditaties te bekijken"
+    },
+    {
+      "type": "textarea",
+      "id": "login_text",
+      "label": "Login tekst",
+      "default": "Je meditaties zijn gekoppeld aan je klantaccount."
+    },
+    {
+      "type": "text",
+      "id": "login_button_label",
+      "label": "Login knoptekst",
+      "default": "Inloggen"
+    },
+
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "content_direction",
+      "label": "t:settings.direction",
+      "options": [
+        { "value": "column", "label": "t:options.vertical" },
+        { "value": "row", "label": "t:options.horizontal" }
+      ],
+      "default": "column"
+    },
+    {
+      "type": "checkbox",
+      "id": "vertical_on_mobile",
+      "label": "t:settings.vertical_on_mobile",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        { "value": "page-width", "label": "t:options.page" },
+        { "value": "full-width", "label": "t:options.full" }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "select",
+      "id": "section_height",
+      "label": "t:settings.height",
+      "options": [
+        { "value": "", "label": "t:options.auto" },
+        { "value": "small", "label": "t:options.small" },
+        { "value": "medium", "label": "t:options.medium" },
+        { "value": "large", "label": "t:options.large" },
+        { "value": "full-screen", "label": "t:options.full_screen" },
+        { "value": "custom", "label": "t:options.custom" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "range",
+      "id": "section_height_custom",
+      "label": "t:settings.custom_height",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 50,
+      "unit": "%",
+      "visible_if": "{{ section.settings.section_height == 'custom' }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 96
     }
   ],
   "presets": [
     {
-      "name": "Meditaties"
+      "name": "Meditaties",
+      "category": "Custom"
     }
   ]
 }
