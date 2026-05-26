@@ -96,25 +96,6 @@
     background: rgba(var(--color-foreground), 0.025);
   }
 
-  #shopify-section-{{ section.id }} .meditations__button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 22px;
-    min-height: 42px;
-    padding: 0 24px;
-    border: 1px solid rgba(var(--color-foreground), 0.85);
-    color: rgb(var(--color-foreground));
-    background: transparent;
-    text-decoration: none;
-    font-size: 13px;
-  }
-
-  #shopify-section-{{ section.id }} .meditations__button:hover {
-    color: rgb(var(--color-background));
-    background: rgb(var(--color-foreground));
-  }
-
   @media screen and (max-width: 749px) {
     #shopify-section-{{ section.id }} .meditations__inner {
       max-width: 100%;
@@ -226,7 +207,7 @@
                     {% if vimeo_id != blank %}
                         <button
                         type="button"
-                        class="meditations__button meditations__toggle"
+                        class="button-base button-primary meditations__toggle"
                         aria-expanded="false"
                         aria-controls="meditation-video-{{ product.id }}"
                         >
@@ -335,18 +316,6 @@
         "type": "collection",
         "id": "collection",
         "label": "Meditatie collectie"
-    },
-    {
-        "type": "text",
-        "id": "title",
-        "label": "Titel",
-        "default": "Mijn meditaties"
-    },
-    {
-      "type": "textarea",
-      "id": "intro",
-      "label": "Intro",
-      "default": "Hier vind je alle meditaties die je hebt aangekocht."
     },
     {
       "type": "text",
