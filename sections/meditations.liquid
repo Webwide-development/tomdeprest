@@ -167,45 +167,62 @@
 
               {% if has_access %}
                 <article class="meditations__card">
-                  {% if product.featured_image != blank %}
+                <div class="meditations__card-header">
+                    {% if product.featured_image != blank %}
                     <div class="meditations__image-wrapper">
-                      <img
-                        src="{{ product.featured_image | image_url: width: 900 }}"
+                        <img
+                        src="{{ product.featured_image | image_url: width: 600 }}"
                         alt="{{ product.featured_image.alt | default: product.title | escape }}"
                         loading="lazy"
-                        width="900"
-                        height="506"
-                      >
+                        width="600"
+                        height="338"
+                        >
                     </div>
-                  {% endif %}
+                    {% endif %}
 
-                  <div class="meditations__content">
+                    <div class="meditations__content">
                     <h2>{{ product.title }}</h2>
 
                     {% if product.description != blank %}
-                      <div class="meditations__description">
+                        <div class="meditations__description">
                         {{ product.description }}
-                      </div>
+                        </div>
                     {% endif %}
 
                     {% if vimeo_id != blank %}
-                      <div class="meditations__video-wrapper">
-                        <iframe
-                          src="https://player.vimeo.com/video/{{ vimeo_id }}"
-                          width="100%"
-                          height="500"
-                          frameborder="0"
-                          allow="autoplay; fullscreen; picture-in-picture"
-                          allowfullscreen
-                          loading="lazy">
-                        </iframe>
-                      </div>
+                        <button
+                        type="button"
+                        class="meditations__button meditations__toggle"
+                        aria-expanded="false"
+                        aria-controls="meditation-video-{{ product.id }}"
+                        >
+                        Beluister meditatie
+                        </button>
                     {% else %}
-                      <p class="meditations__notice">
+                        <p class="meditations__notice">
                         Deze meditatie is nog niet gekoppeld aan een video.
-                      </p>
+                        </p>
                     {% endif %}
-                  </div>
+                    </div>
+                </div>
+
+                {% if vimeo_id != blank %}
+                    <div
+                    id="meditation-video-{{ product.id }}"
+                    class="meditations__video-wrapper"
+                    hidden
+                    >
+                    <iframe
+                        data-src="https://player.vimeo.com/video/{{ vimeo_id }}"
+                        width="100%"
+                        height="500"
+                        frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowfullscreen
+                        loading="lazy">
+                    </iframe>
+                    </div>
+                {% endif %}
                 </article>
               {% endif %}
             {% endfor %}
@@ -243,6 +260,30 @@
 {% endcapture %}
 
 {% render 'section', section: section, children: children %}
+
+<script>
+  document.addEventListener('click', function(event) {
+    const button = event.target.closest('.meditations__toggle');
+
+    if (!button) return;
+
+    const targetId = button.getAttribute('aria-controls');
+    const target = document.getElementById(targetId);
+    const iframe = target ? target.querySelector('iframe') : null;
+    const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+    if (!target) return;
+
+    button.setAttribute('aria-expanded', String(!isOpen));
+    target.hidden = isOpen;
+
+    if (!isOpen && iframe && !iframe.src) {
+      iframe.src = iframe.dataset.src;
+    }
+
+    button.textContent = isOpen ? 'Beluister meditatie' : 'Sluit meditatie';
+  });
+</script>
 
 {% schema %}
 {
