@@ -56,6 +56,38 @@
         "padding-block-end": 80
       }
     },
+    "meditations_VNMpCT": {
+      "type": "meditations",
+      "blocks": {
+        "meditation_WQiPLg": {
+          "type": "meditation",
+          "settings": {
+            "title": "Diepe slaap meditatie",
+            "customer_tag": "meditatie-slaap",
+            "vimeo_id": "123456789"
+          }
+        },
+        "meditation_agcV3V": {
+          "type": "meditation",
+          "settings": {
+            "title": "Open hartmeditatie",
+            "customer_tag": "open-hartmeditatie",
+            "vimeo_id": "123456789"
+          }
+        }
+      },
+      "block_order": [
+        "meditation_WQiPLg",
+        "meditation_agcV3V"
+      ],
+      "name": "Meditations",
+      "settings": {
+        "title": "Mijn meditaties",
+        "empty_text": "Je hebt momenteel nog geen meditaties aangekocht.",
+        "empty_button_url": "",
+        "empty_button_label": "Bekijk meditaties"
+      }
+    },
     "section_zBKtii": {
       "type": "section",
       "blocks": {
@@ -179,6 +211,7 @@
   },
   "order": [
     "main",
+    "meditations_VNMpCT",
     "section_zBKtii"
   ]
 }
