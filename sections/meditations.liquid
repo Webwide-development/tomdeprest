@@ -29,7 +29,7 @@
       </div>
     {% else %}
       <p>Je hebt momenteel nog geen meditaties aangekocht.</p>
-      <a href="/collections/meditaties">Bekijk meditaties</a>
+      <a href="/{{ routes.collections_url }}/meditaties">Bekijk meditaties</a>
     {% endif %}
   </section>
 
@@ -41,7 +41,7 @@
 
   <noscript>
     <p>Log in om je meditaties te bekijken.</p>
-    <a href="/account/login">Inloggen</a>
+    <a href="{{ routes.account_login_url }}">Inloggen</a>
   </noscript>
 
 {% endif %}
