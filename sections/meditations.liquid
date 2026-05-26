@@ -236,7 +236,7 @@
           <p>{{ section.settings.login_text }}</p>
 
           <a
-            href="{{ routes.account_login_url }}?return_url={{ request.path }}"
+            href="{{ routes.account_login_url }}?return_url={{ request.path | url_encode }}"
             class="button-base button-secondary"
           >
             {{ section.settings.login_button_label }}
