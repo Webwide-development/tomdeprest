@@ -1,0 +1,11 @@
+{% if customer %}
+
+  <h1>Mijn meditaties</h1>
+
+{% else %}
+
+  <script>
+    window.location.href = "/account/login";
+  </script>
+
+{% endif %}
