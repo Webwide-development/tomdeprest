@@ -29,14 +29,14 @@
       </div>
     {% else %}
       <p>Je hebt momenteel nog geen meditaties aangekocht.</p>
-      <a href="/{{ routes.collections_url }}/meditaties">Bekijk meditaties</a>
+      <a href="{{ routes.collections_url }}/meditaties">Bekijk meditaties</a>
     {% endif %}
   </section>
 
 {% else %}
 
   <script>
-    window.location.href = "/account/login?return_url=/pages/mijn-meditaties";
+    window.location.href = "{{ routes.account_login_url }}?return_url=/pages/mijn-meditaties";
   </script>
 
   <noscript>
