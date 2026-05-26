@@ -45,3 +45,73 @@
   </noscript>
 
 {% endif %}
+
+
+{% schema %}
+{
+  "name": "Meditations",
+  "tag": "section",
+  "class": "section-meditations",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titel",
+      "default": "Mijn meditaties"
+    },
+    {
+      "type": "text",
+      "id": "empty_text",
+      "label": "Tekst zonder toegang",
+      "default": "Je hebt momenteel nog geen meditaties aangekocht."
+    },
+    {
+      "type": "url",
+      "id": "empty_button_url",
+      "label": "Knoplink zonder toegang"
+    },
+    {
+      "type": "text",
+      "id": "empty_button_label",
+      "label": "Knoptekst zonder toegang",
+      "default": "Bekijk meditaties"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "meditation",
+      "name": "Meditatie",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titel",
+          "default": "Diepe slaap meditatie"
+        },
+        {
+          "type": "text",
+          "id": "customer_tag",
+          "label": "Customer tag",
+          "default": "meditatie-slaap"
+        },
+        {
+          "type": "text",
+          "id": "vimeo_id",
+          "label": "Vimeo video ID",
+          "default": "123456789"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Meditations",
+      "blocks": [
+        {
+          "type": "meditation"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
