@@ -79,9 +79,9 @@
 
 {% else %}
 
-  <script>
+  {% comment %} <script>
     window.location.href = "{{ routes.account_login_url }}?return_url={{ request.path }}";
-  </script>
+  </script> {% endcomment %}
 
   <noscript>
     <p>Log in om je meditaties te bekijken.</p>
