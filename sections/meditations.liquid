@@ -15,7 +15,7 @@
           {% endif %}
         </div>
 
-        {% if meditation_collection != blank and meditation_collection.products_count > 0 %}
+        {% if meditation_collection and meditation_collection.products_count > 0 %}
           <div class="meditations__grid">
             {% for product in meditation_collection.products %}
               {% liquid
