@@ -31,6 +31,10 @@
   endif
 %}
 
+{% if request.path contains '/pages/mijn-meditaties' and customer == nil %}
+  <meta name="robots" content="noindex,nofollow">
+{% endif %}
+
 <meta
   property="og:site_name"
   content="{{ shop.name }}"
