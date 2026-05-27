@@ -40,7 +40,6 @@
         },
         "page-content": {
           "type": "page-content",
-          "disabled": true,
           "settings": {},
           "blocks": {}
         }
