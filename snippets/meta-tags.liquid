@@ -31,7 +31,7 @@
   endif
 %}
 
-{% if request.path contains '/pages/mijn-meditaties' and customer == nil %}
+{% if template.name == 'page' and template.suffix == 'meditations' %}
   <meta name="robots" content="noindex,nofollow">
 {% endif %}
 
