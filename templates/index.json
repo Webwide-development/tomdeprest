@@ -692,7 +692,7 @@
               "type": "text",
               "name": "t:names.description",
               "settings": {
-                "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>",
+                "text": "<p>Met een lach en een traan het boek gelezen. Herkenbaar, confronterend en tegelijk hoopgevend. Dit boek heeft mijn ogen echt geopend en vele twijfels bevestigd. Ik ben alvast aan de slag gegaan met de tips die me ongetwijfeld zullen helpen in mijn herstelproces. Ik tel ondertussen af naar de afspraak P.E.R. </p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -718,7 +718,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Voornaam Naam</p>",
+                "text": "<p>Danielle V.</p>",
                 "width": "100%",
                 "max_width": "none",
                 "alignment": "center",
@@ -790,7 +790,7 @@
               "type": "text",
               "name": "t:names.description",
               "settings": {
-                "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>",
+                "text": "<p>Dag Tom, wat ben ik onder de indruk van je boek én van de meditaties. Die waren trouwens een verrassende extra die het geheel nog sterker maakt. De gratis meditatie heeft me overtuigd om ook de andere meditaties aan te schaffen. Echt een groot pluspunt! Een oprechte dankjewel hiervoor. </p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -816,7 +816,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Voornaam Naam</p>",
+                "text": "<p>Marjolein K.</p>",
                 "width": "100%",
                 "max_width": "none",
                 "alignment": "center",
@@ -888,7 +888,7 @@
               "type": "text",
               "name": "t:names.description",
               "settings": {
-                "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>",
+                "text": "<p>Na “Hoe het lichaam onthoudt wat je zelf vergeten bent” en “De comfortcrisis” mocht ook dit derde boek in mijn collectie niet ontbreken. En opnieuw: een absolute must-read. Of beter nog: een must-do. Dank voor de bruikbare tips!</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -914,7 +914,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Voornaam Naam</p>",
+                "text": "<p>Karel D.</p>",
                 "width": "100%",
                 "max_width": "none",
                 "alignment": "center",
@@ -941,12 +941,111 @@
             "text_hNcThN",
             "text_qxdbUt"
           ]
+        },
+        "group_y7tJhz": {
+          "type": "group",
+          "name": "t:names.column",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 40,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 32,
+            "padding-inline-end": 32
+          },
+          "blocks": {
+            "text_XyTE3f": {
+              "type": "text",
+              "name": "t:names.description",
+              "settings": {
+                "text": "<p>Het boek is opnieuw een echte topper! De bijhorende meditaties hebben me bijzonder aangenaam verrast. Mediteren is eigenlijk nieuw voor mij. Ik ben er meteen mee begonnen en voel nu al dat ze een vast avondritueel zullen worden. </p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_a87QwN": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>Monique M.</p>",
+                "width": "100%",
+                "max_width": "none",
+                "alignment": "center",
+                "type_preset": "h5",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground-heading)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_XyTE3f",
+            "text_a87QwN"
+          ]
         }
       },
       "block_order": [
         "group_UK8CiM",
         "group_b8BFqB",
-        "group_fywf9r"
+        "group_fywf9r",
+        "group_y7tJhz"
       ],
       "name": "t:names.multicolumn",
       "settings": {
