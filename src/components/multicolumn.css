@@ -1,0 +1,10 @@
+@layer components {
+    .multicolumn-section {
+        max-width: 1120px;
+        margin: 0 auto;
+
+        div[data-testid="group-block"] + div[data-testid="group-block"] {
+            @apply max-tablet:mt-12!;
+        }
+    }
+}

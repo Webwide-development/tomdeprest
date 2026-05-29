@@ -3,11 +3,12 @@
 
   @param {section} section - The section object
   @param {string} children - The children of the section
+  @param {string} class - The custom CSS class for the section
 {%- enddoc -%}
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
 <div
-  class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
+  class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}{% if class != blank %} {{ class }}{% endif %}"
   data-testid="ui-test-section"
 
   {% if request.visual_preview_mode %}
