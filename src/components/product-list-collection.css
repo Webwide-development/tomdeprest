@@ -28,7 +28,7 @@
     white-space: pre-line;
   }
 
-  .product-list-collection-list {
+  .product-list-collection-list:has(> li) {
     margin: 0;
     padding: 0;
     list-style: none;
