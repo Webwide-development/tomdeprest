@@ -310,6 +310,7 @@
       ],
       "name": "t:names.pull_quote",
       "settings": {
+        "custom_class": "",
         "content_direction": "column",
         "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",
@@ -631,6 +632,7 @@
       ],
       "name": "t:names.rich_text_section",
       "settings": {
+        "custom_class": "",
         "content_direction": "column",
         "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",
@@ -963,6 +965,7 @@
       ],
       "name": "t:names.multicolumn",
       "settings": {
+        "custom_class": "multicolumn-section",
         "content_direction": "row",
         "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",
@@ -1083,6 +1086,7 @@
       ],
       "name": "t:names.contact_form",
       "settings": {
+        "custom_class": "",
         "content_direction": "column",
         "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",
