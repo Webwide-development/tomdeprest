@@ -4,7 +4,9 @@
   {% content_for 'blocks' %}
 {% endcapture %}
 
-{% render 'section', section: section, children: children %}
+{% assign custom_class = section.settings.custom_class | strip %}
+
+{% render 'section', section: section, children: children, class: custom_class %}
 
 {% schema %}
 {
@@ -28,6 +30,11 @@
     {
       "type": "header",
       "content": "t:content.layout"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom CSS class"
     },
     {
       "type": "select",
@@ -1616,6 +1623,7 @@
       },
       "block_order": ["group_1", "group_2", "group_3"],
       "settings": {
+        "custom_class": "multicolumn-section",
         "content_direction": "row",
         "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",
