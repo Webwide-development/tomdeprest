@@ -300,6 +300,7 @@
   },
   "products": {
     "product": {
+      "free": "Kostenlos",
       "add_to_cart": "In den Warenkorb legen",
       "added_to_cart": "Zum Warenkorb hinzugefügt",
       "adding_to_cart": "Wird hinzugefügt...",

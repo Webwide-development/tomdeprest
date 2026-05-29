@@ -306,6 +306,7 @@
   },
   "products": {
     "product": {
+      "free": "Gratuit",
       "add_to_cart": "Ajouter au panier",
       "added_to_cart": "Ajouté au panier",
       "adding_to_cart": "Ajout...",

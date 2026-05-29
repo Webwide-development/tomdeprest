@@ -323,6 +323,7 @@
   },
   "products": {
     "product": {
+      "free": "Gratis",
       "add_to_cart": "Bestel deze hier",
       "adding_to_cart": "Toevoegen...",
       "added_to_cart": "Toegevoegd aan winkelwagen",
