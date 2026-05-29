@@ -94,7 +94,14 @@
       </span>
     {% endif %}
 
-    {% if show_compare_price %}
+    {% if selected_variant.price == 0 %}
+      <span role="group" class="price price--free inline-block mr-xs">
+        <span class="visually-hidden">Prijs&nbsp;</span>
+        <span class="price__free">
+          {{ 'products.product.free' | t }}
+        </span>
+      </span>
+    {% elsif show_compare_price %}
       <span role="group">
         <span class="visually-hidden">{{ 'content.price_sale' | t }}&nbsp;</span>
         <span class="price">{{ price | default: '&nbsp;' }}</span>
