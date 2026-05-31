@@ -357,7 +357,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>Wenst u meer te weten?</h2>",
+            "text": "",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -404,27 +404,11 @@
             "padding-inline-end": 0
           },
           "blocks": {}
-        },
-        "button_7ajyex": {
-          "type": "button",
-          "name": "t:names.button",
-          "settings": {
-            "label": "Contacteer mij  vrijblijvend",
-            "link": "shopify://pages/contact",
-            "open_in_new_tab": false,
-            "style_class": "button-secondary",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
         }
       },
       "block_order": [
         "text_Xq6tR6",
-        "text_DLHFJH",
-        "button_7ajyex"
+        "text_DLHFJH"
       ],
       "name": "t:names.rich_text_section",
       "settings": {
