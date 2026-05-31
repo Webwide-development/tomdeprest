@@ -71,6 +71,7 @@
       ],
       "name": "Collection heading",
       "settings": {
+        "custom_class": "",
         "content_direction": "column",
         "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",
@@ -265,7 +266,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>",
+            "text": "",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -310,6 +311,7 @@
       ],
       "name": "t:names.rich_text_section",
       "settings": {
+        "custom_class": "",
         "content_direction": "column",
         "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",
@@ -430,6 +432,7 @@
       ],
       "name": "t:names.contact_form",
       "settings": {
+        "custom_class": "",
         "content_direction": "column",
         "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",
