@@ -383,7 +383,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>",
+            "text": "",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
