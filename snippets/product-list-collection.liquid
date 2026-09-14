@@ -58,16 +58,29 @@
             <input type="hidden" name="id" value="{{ current_variant.id }}">
             <input type="hidden" name="quantity" value="1">
 
-            {% render 'add-to-cart-button',
-              can_add_to_cart: can_add_to_cart,
-              add_to_cart_text: section.settings.product_list_button_label,
-              product: product,
-              class: 'product-list-collection-list__button add-to-cart-button',
-              id: 'ProductListAddToCart-' | append: section.id | append: '-' | append: product.id
-            %}
+            {% render 'add-to-cart-button', can_add_to_cart: can_add_to_cart, add_to_cart_text: section.settings.product_list_button_label, product: product, class: 'product-list-collection-list__button add-to-cart-button', id: 'ProductListAddToCart-', append: product.id %}
           {% endform %}
         </li>
       {% endfor %}
     </ul>
   {% endif %}
 </section>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {% render 'add-to-cart-button',
+                  can_add_to_cart: can_add_to_cart,
+                  add_to_cart_text: section.settings.product_list_button_label,
+                  product: product,
+                  class: 'product-list-collection-list__button add-to-cart-button',
+                  id: 'ProductListAddToCart-' | append: section.id | append: '-' | append: product.id
+                %}
+  to: "{% render 'add-to-cart-button', can_add_to_cart: can_add_to_cart, add_to_cart_text:
+    section.settings.product_list_button_label, product: product, class: 'product-list-collection-list__button
+    add-to-cart-button', id: 'ProductListAddToCart-', append: product.id %}"
+  position: 3291..3553
+{% endcomment %}
